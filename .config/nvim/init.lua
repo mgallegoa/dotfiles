@@ -27,39 +27,5 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-  {"catppuccin/nvim", name ="catpuccin", priority = 1000 },
-  {'nvim-telescope/telescope.nvim', tag = '0.1.8',
-      dependencies = { 'nvim-lua/plenary.nvim' }
-  },
+require('lazy').setup("plugins")
 
-  {"nvim-treesitter/nvim-treesitter", run= ":TSUpdate"},
-{
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- recommended
-      "MunifTanjim/nui.nvim",
-    }
-},
-})
-
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
-
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
-local configs = require("nvim-treesitter.configs")
- configs.setup({
-          ensure_installed = { "lua", "vim", "javascript", "html" },
-          highlight = { enable = true },
-          indent = { enable = true },  
-        })
-
-
-vim.keymap.set('n', '<leader>n', ":Neotree filesystem reveal left<CR>", {})
