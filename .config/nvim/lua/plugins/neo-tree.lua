@@ -1,13 +1,37 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- recommended
-      "MunifTanjim/nui.nvim",
-    },
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons", -- recommended
+    "MunifTanjim/nui.nvim",
+  },
   config = function()
-    vim.keymap.set('n', '<leader>n', ":Neotree filesystem reveal left<CR>", {})
+    local neoTree = require("neo-tree")
+    neoTree.setup({
+      window = {
+        mappings = {
+          ["l"] = "toggle_node",
+          ["h"] = "close_node",
+        },
+      },
+      event_handlers = {
+        {
+          event = "file_open_requested",
+          handler = function()
+            -- auto close
+            vim.cmd("Neotree close")
+            -- OR
+            --     require("neo-tree.command").execute({ action = "close" })
+          end
+        },
+      },
+    })
+    vim.keymap.set('n', '<leader>n', ":Neotree filesystem reveal position=left toggle<CR>",
+      { desc = "NeoTree filesystem at the left of the screen." })
+    vim.keymap.set('n', '<leader>s', ":Neotree git_status reveal position=right toggle<CR>",
+      { desc = "NeoTree git_status at the right of the screen." })
+    vim.api.nvim_set_keymap('n', '<CR>', ':lua require("neo-tree").close()<CR>',
+      { noremap = true, silent = true, desc = "Close the file system afther open the file" })
   end
 }
-
