@@ -208,7 +208,11 @@ export PATH="$PATH:/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 export EDITOR="nvim"
+
+# Tmuxifier to configure tmux sessions
+eval "$(tmuxifier init -)"
 alias tfc="tmuxifier load-session configurations"
+alias tfa="tmuxifier load-session conceptsProbes"
 
 # Node Version Manager NVM
 export NVM_DIR="$HOME/.nvm"

@@ -14,6 +14,12 @@ if initialize_session "configurations"; then
   load_window "tmux"
   load_window "tmuxifier"
 
+  # 4 Create a new window for the Terminals configuration 
+  new_window "Terminals"
+  run_cmd "nvim .bashrc"
+  split_h 50
+  run_cmd "nvim .profile"
+
   # Select the default active window on session creation.
   select_window 1
 
