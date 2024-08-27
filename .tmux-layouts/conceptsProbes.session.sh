@@ -1,7 +1,9 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
 #session_root "~/Projects/conceptsProbes"
-
+if [ ! -e "$DATA_GIT_PROJECTS_DIR" ]; then
+  readonly DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
+fi
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
 if initialize_session "conceptsProbes"; then
@@ -13,27 +15,27 @@ if initialize_session "conceptsProbes"; then
   load_window "VanillaJavaScript"
   # 2 Create a new window for the order Summary Component project
   new_window "orderSummaryComponent"
-  run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/VanillaJavaScript/order-summary-component-main" 
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript/order-summary-component-main" 
   run_cmd "nvim README.md"
 
   # 3 Create a new window for the Sass and Bootstrap project
   new_window "Sass Bootstrap"
-  run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/UsingSassBootstrap" 
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/UsingSassBootstrap" 
   run_cmd "nvim index.html"
 
  # 4 Create a new window for the rest api with node project
   new_window "Rest API Node"
-  run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/rest-api-node" 
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/rest-api-node" 
   run_cmd "nvim src/app.js"
 
  # 5 Create a new window for the React New Features project
   new_window "React New Features"
-  run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/reactnewfeatures"
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/reactnewfeatures"
   run_cmd "nvim src/App.js"
 
  # 6 Create a new window for the java project, path exercise
   new_window "Java Path Exercise"
-  run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/java/PathExercise"
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/java/PathExercise"
   run_cmd "nvim src/main/java/Exercise.java"
 
 
