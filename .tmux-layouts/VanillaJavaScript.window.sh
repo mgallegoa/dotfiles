@@ -2,6 +2,7 @@
 # Must be called before `new_window`.
 #window_root "~/Projects/VanillaJavaScript"
 
+readonly DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
 new_window "VanillaJavaScript"
@@ -12,10 +13,10 @@ split_h 50
 split_v 40
 
 # Run commands.
-run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/VanillaJavaScript" 0
-run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/VanillaJavaScript" 1 
-run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/VanillaJavaScript" 2
-run_cmd "cd /media/manuel/Datos/mgallegoa/conceptsProbes/VanillaJavaScript" 3
+run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript" 0
+run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript" 1 
+run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript" 2
+run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript" 3
 run_cmd "nvim indexAppNotes.html" 0
 run_cmd "nvim indexAppSimpleRxJS.html" 1
 run_cmd "nvim indexAppServices.html" 2
