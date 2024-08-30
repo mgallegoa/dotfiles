@@ -22,13 +22,13 @@ if initialize_session "portfolio_Manuel"; then
 
   new_window "Sunnyside Agency"
   
-  run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/sunnyside-agency-landing-page-main"
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/fem/sunnyside-agency-landing-page-main"
   run_cmd "nvim index.html"
 
 
   new_window "Order Summary"
  
-  run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/order-summary-component-main"
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/fem/order-summary-component-main"
   run_cmd "nvim index.html"
 
   # Select the default active window on session creation.
