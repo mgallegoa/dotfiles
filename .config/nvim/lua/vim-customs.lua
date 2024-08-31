@@ -2,8 +2,8 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
-vim.cmd("noremap aa <Esc>")
-vim.cmd("inoremap aa <Esc>")
+vim.cmd("noremap ff <Esc>")
+vim.cmd("inoremap ff <Esc>")
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 vim.g.mapleader = " "
