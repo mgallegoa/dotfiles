@@ -203,6 +203,10 @@ source "$BASH_IT"/bash_it.sh
 # RIPGREP
 export PATH="$PATH:/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/"
 
+# Terminal kitty
+alias k="$HOME/.local/kitty.app/bin/kitty"
+alias ke="$HOME/.local/kitty.app/bin/kitten"
+alias kec="$HOME/.local/kitty.app/bin/kitten icat"
 
 # Tmuxifier for configure sessions in tmux
 export PATH="$HOME/.tmuxifier/bin:$PATH"
