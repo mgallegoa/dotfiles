@@ -39,8 +39,10 @@ fi
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
-# Added to support 256 colors
-export TERM=xterm-256color
+# export TERM=xterm-256color
+# https://zserge.com/posts/tmux/
+# Added to support 256 colors for use kitty + tmux
+export TERM=screen-256color
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -66,8 +68,7 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
+case "$TERM" in xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
@@ -204,12 +205,13 @@ source "$BASH_IT"/bash_it.sh
 export PATH="$PATH:/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/"
 
 # Terminal kitty
+export PATH="$PATH:$HOME/.local/kitty.app/bin/kitty"
 alias k="$HOME/.local/kitty.app/bin/kitty"
 alias ke="$HOME/.local/kitty.app/bin/kitten"
 alias kec="$HOME/.local/kitty.app/bin/kitten icat"
 
 # Tmuxifier for configure sessions in tmux
-export PATH="$HOME/.tmuxifier/bin:$PATH"
+export PATH="$PATH:$HOME/.tmuxifier/bin"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 export EDITOR="nvim"
 export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
