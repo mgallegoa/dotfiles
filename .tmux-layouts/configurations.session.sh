@@ -20,6 +20,11 @@ if initialize_session "configurations"; then
   split_h 50
   run_cmd "nvim .profile"
 
+  # 5 Create a new window for the Telescope Media Files 
+  new_window "Telescope Media Files"
+  run_cmd "cd ~/.local/share/nvim/lazy/telescope-media-files.nvim/"
+  run_cmd "nvim README.md"
+ 
   # Select the default active window on session creation.
   select_window 1
 
