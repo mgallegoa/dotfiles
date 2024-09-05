@@ -5,6 +5,10 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("noremap ff <Esc>")
 vim.cmd("inoremap ff <Esc>")
 
+-- Smart case sensitive. Active casesensitive only by lower-case search
+vim.cmd("set ignorecase")
+vim.cmd("set smartcase")
+
 -- Make sure to setup `mapleader` and `maplocalleader` before
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
