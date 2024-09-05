@@ -17,7 +17,10 @@ return {
             -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
             filetypes = { "png", "jpg", "jpeg", "webp", "svg", "gif", "pdf", "epub", "ttf", "mp4", "3gp", "mpeg" },
             -- find command (defaults to `fd`)
-            find_cmd = "rg"
+            find_cmd = "rg",
+            -- command_open_imen = "display" -- Example to use imageMagick to show the image instead default eog
+            command_open_image = 'gnome-terminal -- env TMUX="" kitty --hold kitten ica' -- Example to use the kitty terminal for the images
+
           }
         },
       })
