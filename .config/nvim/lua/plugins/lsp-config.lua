@@ -25,9 +25,14 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities
       })
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set('n', '<leader>gr', vim.lsp.buf.rename, { noremap = true, silent = true })
+
+      -- Keys to navigate the floating window
+      vim.keymap.set('n', '<C>cn', ':cnext<CR>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<C>cp', ':cprev<CR>', { noremap = true, silent = true })
     end
   }
 }
