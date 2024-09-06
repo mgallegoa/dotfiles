@@ -37,6 +37,7 @@ fi
 
 # https://zserge.com/posts/tmux/
 # Added to support 256 colors for use kitty + tmux
+# export TERM=xterm-kitty
 # export TERM=screen-256color
 # export TERM=xterm-256color
 # set a fancy prompt (non-color, unless we know we "want" color)
