@@ -13,6 +13,7 @@ return {
         mappings = {
           ["l"] = "toggle_node",
           ["h"] = "close_node",
+          ["g"] = "open",
         },
       },
       event_handlers = {
