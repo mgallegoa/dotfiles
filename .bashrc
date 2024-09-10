@@ -36,7 +36,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # https://zserge.com/posts/tmux/
-# Added to support 256 colors for use kitty + tmux
+# Added to support 256 colors for use kitty + tmux (tmux-256color)
 # export TERM=xterm-kitty
 # export TERM=screen-256color
 # export TERM=xterm-256color
