@@ -20,13 +20,13 @@ return {
             find_cmd = "rg",
             -- command_open_imen = "display" -- Example to use imageMagick to show the image instead default eog
             command_open_image = 'gnome-terminal -- env TMUX="" kitty --hold kitten ica' -- Example to use the kitty terminal for the images
-
           }
         },
       })
     end,
     keys = {
       { "<leader>fm", "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>" },
+      { "<leader>fn", "<cmd>lua require('telescope').extensions.media_files.media_files_console()<cr>" },
     }
   }
 }
