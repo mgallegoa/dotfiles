@@ -17,8 +17,8 @@ vim.wo.relativenumber = true
 vim.wo.number = true
 vim.o.scrolloff = 10
 
-vim.keymap.set('n', 'z', '$', { noremap = true, silent = true, desc = "Go to the end of the line" })
-vim.keymap.set('n', 'a', '0', { noremap = true, silent = true, desc = "Go to the begin of the line" })
+vim.keymap.set({'n', 'v'}, 'z', '$', { noremap = true, silent = true, desc = "Go to the end of the line" })
+vim.keymap.set({'n', 'v'}, 'a', '0', { noremap = true, silent = true, desc = "Go to the begin of the line" })
 
 vim.keymap.set('n', '<leader>Y', '"+yy', { noremap = true, silent = true, desc = "Copy the entire line to the clipboard" })
 vim.keymap.set('v', '<leader>y', '"+y',
