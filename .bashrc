@@ -200,7 +200,7 @@ export SCM_CHECK=true
 # export BASH_IT_RELOAD_LEGACY=1
 
 # Load Bash It
-source "$BASH_IT"/bash_it.sh
+#source "$BASH_IT"/bash_it.sh
 
 # RIPGREP
 export PATH="$PATH:/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/"
