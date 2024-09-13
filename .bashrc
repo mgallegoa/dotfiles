@@ -71,6 +71,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+
     ;;
 *)
     ;;
@@ -201,7 +202,6 @@ export SCM_CHECK=true
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
-
 # RIPGREP
 export PATH="$PATH:/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/"
 
@@ -227,3 +227,9 @@ alias tfb="tmuxifier load-session portfolio_Manuel"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Custon theme catppuccin from oh-my-posh
+export PATH="$PATH:$HOME/.local/bin/"
+#export POSH_THEME="blueish"
+export POSH_THEME="night-owl"
+eval "$(oh-my-posh --init --shell bash --config $HOME/.cache/oh-my-posh/themes/$POSH_THEME.omp.json)"
