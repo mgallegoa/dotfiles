@@ -13,13 +13,14 @@ return {
       telescope.setup({
         extensions = {
           media_files = {
-            -- filetypes whitelist
-            -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-            filetypes = { "png", "jpg", "jpeg", "webp", "svg", "gif", "pdf", "epub", "ttf", "mp4", "3gp", "mpeg" },
-            -- find command (defaults to `fd`)
-            find_cmd = "rg",
+            filetypes = { "png", "jpg", "jpeg", "webp", "svg", "gif", "pdf", "epub", "ttf", "mp4", "3gp", "mpeg" }, -- default {"png", "jpg", "mp4", "webm", "pdf"}
+            find_cmd = "rg",                                                                                        -- find command defaults to `fd`
             -- command_open_imen = "display" -- Example to use imageMagick to show the image instead default eog
-            command_open_image = 'gnome-terminal -- env TMUX="" kitty --hold kitten ica' -- Example to use the kitty terminal for the images
+            -- command_open_image = 'gnome-terminal -- env TMUX="" kitty --hold kitten ica' -- Example to use the kitty terminal for the images
+            tmux_resize_open_pane = 30,
+            -- show_file_details = 0,
+            command_open_thumbnail = "kitten icat",
+tmux_time_wait=1
           }
         },
       })
