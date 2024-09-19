@@ -31,6 +31,13 @@ if initialize_session "portfolio_Manuel"; then
   run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/fem/order-summary-component-main"
   run_cmd "nvim index.html"
 
+
+  new_window "Blog Card"
+ 
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/fem/blog-preview-card-main"
+  run_cmd "nvim index.html"
+
+
   # Select the default active window on session creation.
   select_window 1
 
