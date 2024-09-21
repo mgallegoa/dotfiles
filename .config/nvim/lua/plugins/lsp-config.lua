@@ -23,7 +23,7 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
       vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
