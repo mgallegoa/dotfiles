@@ -9,10 +9,14 @@ return {
     "rafamadriz/friendly-snippets",
   },
   {
+    "hrsh7th/cmp-path",
+  },
+  {
     'L3MON4D3/LuaSnip',
     dependiencies = {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
+      "hrsh7th/cmp-path",
     },
   },
   {
@@ -43,6 +47,7 @@ return {
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'luasnip' }, -- For luasnip users.
+          { name = 'path' },
         }, {
           { name = 'buffer' },
         })
