@@ -18,9 +18,9 @@ return {
             -- command_open_imen = "display" -- Example to use imageMagick to show the image instead default eog
             -- command_open_image = 'gnome-terminal -- env TMUX="" kitty --hold kitten ica' -- Example to use the kitty terminal for the images
             tmux_resize_open_pane = 30,
-            -- show_file_details = 0,
+            show_file_details = 0,
             command_open_thumbnail = "kitten icat",
-tmux_time_wait=1
+            tmux_time_wait = 0.5,
           }
         },
       })
