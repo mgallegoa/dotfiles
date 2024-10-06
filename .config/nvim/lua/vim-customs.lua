@@ -23,7 +23,12 @@ vim.o.spell = true
 vim.o.spelllang = "en_us"
 vim.o.mousemodel = "popup"
 
-vim.keymap.set({ "n", "v" }, "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "Write in the file. : w" })
+vim.keymap.set(
+	{ "n", "v" },
+	"<leader>w",
+	":wa<CR>",
+	{ noremap = true, silent = true, desc = "Write in all files. : wa" }
+)
 vim.keymap.set({ "n", "v" }, "<leader>q", ":q<CR>", { noremap = true, desc = "Quit the file. : q" })
 
 vim.keymap.set({ "n", "v" }, "<leader>z", "$", { noremap = true, silent = true, desc = "Go to the end of the line" })
