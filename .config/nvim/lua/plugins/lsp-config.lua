@@ -35,7 +35,7 @@ return {
 
 			vim.keymap.set(
 				{ "n", "v" },
-				"<leader>k",
+				"<leader>i",
 				vim.lsp.buf.hover,
 				{ noremap = true, desc = "LSP: Available documentation." }
 			)
