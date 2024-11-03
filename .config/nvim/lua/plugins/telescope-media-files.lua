@@ -33,8 +33,9 @@ return {
 						tmux_resize_open_pane = 30,
 						show_file_details = 0,
 						command_open_thumbnail = "kitten icat",
+            tmux_command_open_thumbnail = "kitten icat",
 						tmux_time_wait = 0.5,
-						tmux_index_pane_thumbnail = 2,
+						-- tmux_index_pane_thumbnail = 2,
 					},
 				},
 			})
