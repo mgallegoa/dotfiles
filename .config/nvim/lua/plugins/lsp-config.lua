@@ -57,7 +57,12 @@ return {
 				vim.lsp.buf.code_action,
 				{ noremap = true, desc = "LSP: Code actions." }
 			)
-			vim.keymap.set({ "n", "v" }, "<leader>rn", vim.lsp.buf.rename, { noremap = true, desc = "LSP: rename." })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>gc",
+				vim.lsp.buf.rename,
+				{ noremap = true, desc = "LSP: rename, go to change gc." }
+			)
 
 			-- Keys to navigate the floating window
 			vim.keymap.set({ "i" }, "<C>n", ":cnext<CR>", { noremap = true, silent = true })
