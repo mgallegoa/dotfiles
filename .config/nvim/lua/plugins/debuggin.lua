@@ -27,9 +27,12 @@ return {
 
 		vim.keymap.set("n", "<Leader>dc", dap.continue, { desc = "Debug: continue or start, dc" })
 		vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, { desc = "Debug: toggle breakpoint, dt" })
-		vim.keymap.set("n", "<Leader>dn", dap.step_over, { desc = "Debug: step over next, dn" })
-		vim.keymap.set("n", "<Leader>di", dap.step_into, { desc = "Debug: step into, di" })
-		vim.keymap.set("n", "<Leader>dp", dap.step_out, { desc = "Debug: step out previous, dp" })
+		-- vim.keymap.set("n", "<Leader>dn", dap.step_over, { desc = "Debug: step over next, dn" })
+		-- vim.keymap.set("n", "<Leader>di", dap.step_into, { desc = "Debug: step into, di" })
+		-- vim.keymap.set("n", "<Leader>dp", dap.step_out, { desc = "Debug: step out previous, dp" })
+		vim.keymap.set("n", "J", dap.step_over, { desc = "Debug: step over next, J" })
+		vim.keymap.set("n", "H", dap.step_into, { desc = "Debug: step into, H" })
+		vim.keymap.set("n", "K", dap.step_out, { desc = "Debug: step out previous, K" })
 		vim.keymap.set("n", "<Leader>dr", dap.repl.open, { desc = "Debug: repl open, dr" })
 		vim.keymap.set("n", "<Leader>dl", dap.run_last, { desc = "Debug: run last, dl" })
 
