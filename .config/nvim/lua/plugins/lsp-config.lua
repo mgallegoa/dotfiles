@@ -24,6 +24,11 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.ts_ls.setup({
+				-- init_options = {
+				-- 	preferences = {
+				-- 		disableSuggestions = true,
+				-- 	},
+				-- },
 				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
