@@ -233,3 +233,9 @@ export PATH="$PATH:$HOME/.local/bin/"
 #export POSH_THEME="blueish"
 export POSH_THEME="night-owl"
 eval "$(oh-my-posh --init --shell bash --config $HOME/.cache/oh-my-posh/themes/$POSH_THEME.omp.json)"
+
+# Data Bases DBeaver UI Client
+export PATH="$PATH:/opt/dbeaver/"
+
+# Turso
+export PATH="$PATH:/home/manuel/.turso"
