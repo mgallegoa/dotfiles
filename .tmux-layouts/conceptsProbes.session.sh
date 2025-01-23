@@ -33,7 +33,12 @@ if initialize_session "conceptsProbes"; then
   run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/reactnewfeatures"
   run_cmd "nvim src/App.js"
 
- # 6 Create a new window for the java project, path exercise
+ # 6 Create a new window for the csv load and search with Node and React project
+  new_window "CSV file load"
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/csv-node-react/backend/"
+  run_cmd "nvim server.ts"
+
+ # 7 Create a new window for the java project, path exercise
   new_window "Java Path Exercise"
   run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/java/PathExercise"
   run_cmd "nvim src/main/java/Exercise.java"
