@@ -33,7 +33,7 @@ return {
 						tmux_resize_open_pane = 30,
 						show_file_details = 0,
 						command_open_thumbnail = "kitten icat",
-            tmux_command_open_thumbnail = "kitten icat",
+						tmux_command_open_thumbnail = "kitten icat",
 						tmux_time_wait = 0.5,
 						-- tmux_index_pane_thumbnail = 2,
 					},
@@ -41,8 +41,16 @@ return {
 			})
 		end,
 		keys = {
-			{ "<leader>fm", "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>" },
-			{ "<leader>fn", "<cmd>lua require('telescope').extensions.media_files.media_files_console()<cr>" },
+			{
+				"<leader>fm",
+				"<cmd>lua require('telescope').extensions.media_files.media_files()<cr>",
+				desc = "Media files: Open telescope media files fm",
+			},
+			{
+				"<leader>fn",
+				"<cmd>lua require('telescope').extensions.media_files.media_files_console()<cr>",
+				desc = "Media files console: Open telescope media files in console fn",
+			},
 		},
 	},
 }
