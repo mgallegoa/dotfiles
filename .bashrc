@@ -219,9 +219,9 @@ export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
 
 # Tmuxifier to configure tmux sessions
 eval "$(tmuxifier init -)"
-alias tfc="tmuxifier load-session configurations"
-alias tfa="tmuxifier load-session conceptsProbes"
-alias tfb="tmuxifier load-session portfolio_Manuel"
+alias tfa="tmuxifier load-session tfa_portfolioManuel"
+alias tfb="tmuxifier load-session tfb_conceptProbes"
+alias tfc="tmuxifier load-session tfc_configurations"
 
 # Node Version Manager NVM
 export NVM_DIR="$HOME/.nvm"

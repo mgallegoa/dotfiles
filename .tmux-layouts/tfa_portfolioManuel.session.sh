@@ -48,6 +48,16 @@ if initialize_session "portfolio_Manuel"; then
   run_cmd "nvim index.html"
 
 
+  new_window "Movie Express MVC"
+ 
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/vanillaJS/basic_express_movies_mvc"
+  run_cmd "nvim src/index.mjs"
+
+  new_window "Chat Express Sockets"
+ 
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/vanillaJS/basic_chat_sockets"
+  run_cmd "nvim README.md"
+
 
 
   # Select the default active window on session creation.
