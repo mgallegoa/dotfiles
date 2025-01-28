@@ -31,8 +31,8 @@ if initialize_session "conceptsProbes"; then
 
  # 5 Create a new window for the csv load and search with Node and React project
   new_window "CSV file load"
-  run_cmd "cd $DATA_GIT_PROJECTS_DIR/csv-node-react/backend/"
-  run_cmd "nvim server.ts"
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/csv-node-react/"
+  run_cmd "nvim README.md"
 
  # 6 Create a new window for the java project, path exercise
   new_window "Java Path Exercise"
