@@ -25,7 +25,7 @@ run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript/tetris" 3
 run_cmd "nvim indexAppNotes.html" 0
 run_cmd "nvim indexAppSimpleRxJS.html" 1
 run_cmd "nvim indexAppServices.html" 2
-run_cmd "nvim indexTetris.html" 3
+run_cmd "nvim index.html" 3
 # Paste text
 #send_keys "top"    # paste into active pane
 #send_keys "date" 1 # paste into pane 1
