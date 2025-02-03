@@ -21,7 +21,7 @@ split_h 50
 run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript" 0
 run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript" 1 
 run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript" 2
-run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/VanillaJavaScript/tetris" 3
+run_cmd "cd $DATA_GIT_PROJECTS_DIR/mgallegoa.github.io/vanillaJS/tetris" 3
 run_cmd "nvim indexAppNotes.html" 0
 run_cmd "nvim indexAppSimpleRxJS.html" 1
 run_cmd "nvim indexAppServices.html" 2
