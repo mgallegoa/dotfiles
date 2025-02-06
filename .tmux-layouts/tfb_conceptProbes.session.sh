@@ -6,7 +6,7 @@ if [ ! -e "$DATA_GIT_PROJECTS_DIR" ]; then
 fi
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "conceptsProbes"; then
+if initialize_session "tfb_conceptProbes"; then
 
   # Create a new window inline within session layout definition.
   #new_window "VanillaJavaScript"

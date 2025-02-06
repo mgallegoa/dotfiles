@@ -4,7 +4,7 @@
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
-if initialize_session "configurations"; then
+if initialize_session "tfc_configurations"; then
 
   # Create a new window inline within session layout definition.
   # new_window "nvim"
