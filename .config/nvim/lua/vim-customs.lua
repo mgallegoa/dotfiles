@@ -74,22 +74,12 @@ vim.keymap.set(
 
 -- Split windows
 vim.keymap.set("n", "ss", ":vsplit<Return>", { noremap = true, silent = true, desc = "Split : Create a vsplit window" })
-vim.keymap.set(
-	"n",
-	"sv",
-	":split<Return>",
-	{ noremap = true, silent = true, desc = "Split v : Create a hsplit window" }
-)
+vim.keymap.set("n", "sv", ":split<Return>", { noremap = true, silent = true, desc = "Split : Create a hsplit window" })
 
 -- Tabs
 vim.keymap.set("n", "te", ":tabedit", { noremap = true, silent = true, desc = "Tabs : Create a new vim tab" })
-vim.keymap.set("n", "<c-tab>", ":tabnext<Return>", { noremap = true, silent = true, desc = "Tabs : Move to next tab" })
-vim.keymap.set(
-	"n",
-	"<s-tab>",
-	":tabprev<Return>",
-	{ noremap = true, silent = true, desc = "Tabs : ove to previous tab" }
-)
+vim.keymap.set("n", "<C-tab>", ":tabn<Return>", { noremap = true, silent = true, desc = "Tabs : Move to next tab" })
+vim.keymap.set("n", "<s-tab>", ":tabp<Return>", { noremap = true, silent = true, desc = "Tabs : Move to previous tab" })
 
 -- Buffers
 vim.keymap.set("n", "<tab>", ":b#<Return>", { noremap = true, silent = true, desc = "Buffers : Next buffer" })
