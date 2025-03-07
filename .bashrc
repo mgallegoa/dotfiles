@@ -210,6 +210,7 @@ export PATH="$PATH:$HOME/.local/kitty.app/bin/kitty"
 alias k="$HOME/.local/kitty.app/bin/kitty"
 alias ke="$HOME/.local/kitty.app/bin/kitten"
 alias kec="$HOME/.local/kitty.app/bin/kitten icat"
+alias ks="$HOME/.local/kitty.app/bin/kitten ssh"
 
 # Tmuxifier for configure sessions in tmux
 export PATH="$PATH:$HOME/.tmuxifier/bin"
@@ -239,3 +240,11 @@ export PATH="$PATH:/opt/dbeaver/"
 
 # Turso
 export PATH="$PATH:/home/manuel/.turso"
+
+export PATH=/home/manuel/bin:$PATH
+
+[[ -e "/home/manuel/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/manuel/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
