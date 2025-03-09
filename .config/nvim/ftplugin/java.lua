@@ -71,10 +71,10 @@ vim.keymap.set(
 	"<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>",
 	{ desc = "Extract Variable" }
 )
-vim.keymap.set("n", "<leader>gc", "<Cmd>lua require('jdtls').extract_constant()<CR>", { desc = "Extract Constant" })
+vim.keymap.set("n", "<leader>gb", "<Cmd>lua require('jdtls').extract_constant()<CR>", { desc = "Extract Constant" })
 vim.keymap.set(
 	"v",
-	"<leader>gc",
+	"<leader>gb",
 	"<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>",
 	{ desc = "Extract Constant" }
 )
