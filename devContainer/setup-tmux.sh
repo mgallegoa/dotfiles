@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# e: Exit script on any error. u: treat unset variables as error. o Fail
+set -euo pipefail
+
 declare -x PATH_DOTFILES="$HOME/dotfiles"
 
 echo "TMUX : Creating simlink to config dot file." | tee -a $HOME/setup.log
