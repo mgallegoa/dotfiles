@@ -39,7 +39,7 @@ fi
 # Added to support 256 colors for use kitty + tmux (tmux-256color)
 # export TERM=xterm-kitty
 # export TERM=screen-256color
-# export TERM=xterm-256color
+export TERM=xterm-256color
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -97,6 +97,11 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# Set language utf-8 (this is default for Ubuntu but not for DevContainer debian)
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # some custom user alias
 # alias for neovim
