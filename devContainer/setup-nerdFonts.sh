@@ -23,6 +23,6 @@ rm "$HOME/$FONT_NAME.tar.xz"
 
 # Refresh font cache
 echo "NERD-FONTS : Refreshing font cache..." | tee -a $HOME/setup.log
-fc-cache -fv "$INSTALL_DIR"
+fc-cache -fv $INSTALL_DIR
 
 echo "NERD-FONTS : $FONT_NAME $FONT_VARIANT installed!." | tee -a $HOME/setup.log
