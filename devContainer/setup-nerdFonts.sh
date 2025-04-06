@@ -3,9 +3,10 @@
 # e: Exit script on any error. u: treat unset variables as error. o Fail
 set -euo pipefail
 
-FONT_NAME="MesloLGS"
+# FONT_NAME="MesloLGS"
+FONT_NAME="Meslo"
 FONT_VARIANT="Nerd Font Mono"
-FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/${FONT_NAME}.zip"
+FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/v3.3.0/${FONT_NAME}.zip"
 declare -x INSTALL_DIR="$HOME/.local/share/fonts"
 
 mkdir -p "$INSTALL_DIR"
