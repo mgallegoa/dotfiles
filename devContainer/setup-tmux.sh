@@ -8,12 +8,9 @@ declare -x PATH_DOTFILES="$HOME/dotfiles"
 echo "TMUX : Creating simlink to config dot file." | tee -a $HOME/setup.log
 ln -sf $PATH_DOTFILES/.tmux.conf $HOME/.tmux.conf
 
+echo "TMUX : Creating new session." | tee -a $HOME/setup.log
 TMUX_SESSION_NAME="tmux_devContainer_configuration"
-# Start a new session if not already running
-tmux has-session -t $TMUX_SESSION_NAME 2>/dev/null
-if [ $? != 0 ]; then
-  tmux new-session -d -s $TMUX_SESSION_NAME C-m
-fi
+tmux new-session -d -s $TMUX_SESSION_NAME C-m
 
 echo "TMUX : Source to tmux configuration file." | tee -a $HOME/setup.log
 tmux send-keys -t $TMUX_SESSION_NAME "tmux source-file $HOME/.tmux.conf" C-m
