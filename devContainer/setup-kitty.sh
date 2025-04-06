@@ -1,5 +1,9 @@
 #!/bin/bash
 
+##########################
+# NOTE: GUI apps like Kitty won’t run inside the container unless you're forwarding X11 (not common in VS Code DevContainers).
+##########################
+
 # e: Exit script on any error. u: treat unset variables as error. o Fail
 set -euo pipefail
 
