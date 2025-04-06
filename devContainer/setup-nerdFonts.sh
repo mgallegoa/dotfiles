@@ -13,7 +13,6 @@ mkdir -p "$INSTALL_DIR"
 
 echo "NERD-FONTS : Downloading $FONT_NAME..." | tee -a $HOME/setup.log
 curl -fLo "$HOME/$FONT_NAME.tar.xz" $FONT_URL
-TAR_FILE=$(tar -l "$HOME/$FONT_NAME.tar.xz" | awk '{print $4}' | grep '\.tar\.xz$')
 
 # Unzip to font directory
 echo "NERD-FONTS : Installing $FONT_NAME $FONT_VARIANT to $INSTALL_DIR" | tee -a $HOME/setup.log
