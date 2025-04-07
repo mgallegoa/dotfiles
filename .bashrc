@@ -110,6 +110,7 @@ git config --global color.diff.new "cyan bold"
 # some custom user alias
 # alias for neovim
 alias nv='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim'
+alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

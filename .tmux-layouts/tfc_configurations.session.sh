@@ -16,13 +16,13 @@ if initialize_session "tfc_configurations"; then
 
   # 4 Create a new window for the Terminals configuration 
   new_window "Terminals"
-  run_cmd "nvim .bashrc"
+  run_cmd "nvim $HOME/.bashrc"
   split_h 50
-  run_cmd "nvim .config/kitty/kitty.conf"
+  run_cmd "nvim $HOME/.config/kitty/kitty.conf"
 
   # 5 Create a new window for the Telescope Media Files 
   new_window "Telescope Media Files"
-  run_cmd "cd ~/.local/share/nvim/lazy/telescope-media-files.nvim/"
+  run_cmd "cd $HOME/.local/share/nvim/lazy/telescope-media-files.nvim/"
   run_cmd "nvim lua/telescope/_extensions/media_files.lua"
  
   # Select the default active window on session creation.

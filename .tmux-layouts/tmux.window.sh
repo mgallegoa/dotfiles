@@ -11,7 +11,7 @@ new_window "tmux"
 #split_h 50
 
 # Run commands.
-run_cmd "nvim .tmux.conf"     # runs in active pane
+run_cmd "nvim $HOME/.tmux.conf"     # runs in active pane
 #run_cmd "date" 1  # runs in pane 1
 
 # Paste text

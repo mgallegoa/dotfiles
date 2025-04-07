@@ -11,7 +11,7 @@ new_window "tmuxifier"
 #split_h 50
 
 # Run commands.
-run_cmd "cd ~/.tmux-layouts/"     # runs in active pane
+run_cmd "cd $HOME/.tmux-layouts/"     # runs in active pane
 run_cmd "ls -h"
 
 # Paste text

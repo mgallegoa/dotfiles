@@ -11,10 +11,10 @@ new_window "nvim"
 split_h 40
 
 # Run commands.
-run_cmd "cd ~/.config/nvim/" 0 # runs in active pane 0
+run_cmd "cd $HOME/.config/nvim/" 0 # runs in active pane 0
 run_cmd "nvim init.lua" 0
 
-run_cmd "cd ~/.local/share/nvim/undo" 1 # runs in active pane 1
+run_cmd "cd $HOME/.local/share/nvim/undo" 1 # runs in active pane 1
 run_cmd "ll -h" 1 
 
 # Paste text

@@ -1,9 +1,3 @@
-# Set a custom session root path. Default is `$HOME`.
-# Must be called before `initialize_session`.
-#session_root "~/Projects/conceptsProbes"
-if [ ! -e "$DATA_GIT_PROJECTS_DIR" ]; then
-  readonly DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
-fi
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
 if initialize_session "tfb_conceptProbes"; then
