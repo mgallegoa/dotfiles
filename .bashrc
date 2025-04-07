@@ -103,6 +103,10 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# GIT : Configure the color for diff
+git config --global color.diff.frag "yellow bold"
+git config --global color.diff.new "cyan bold"
+
 # some custom user alias
 # alias for neovim
 alias nv='/opt/nvim-linux64-v0.10.2/bin/nvim'
@@ -218,7 +222,7 @@ alias kec="$HOME/.local/kitty.app/bin/kitten icat"
 alias ks="$HOME/.local/kitty.app/bin/kitten ssh"
 
 # Tmuxifier for configure sessions in tmux
-export PATH="$PATH:$HOME/.tmuxifier/bin"
+export PATH="$PATH:/opt/manuel/tmuxifier/bin"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 export EDITOR="nvim"
 export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
