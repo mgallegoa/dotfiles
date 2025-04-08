@@ -80,6 +80,9 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    export LS_COLORS="di=01;34:tw=05;34:ln=35:so=01;33:pi=01;32:ex=31"
+    # Show the colors in console
+    #for i in {30..37}; do for j in {40..47}; do echo -e "\e[${i};${j}m fg=$i bg=$j \e[0m"; done; done 
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -109,8 +112,9 @@ git config --global color.diff.new "cyan bold"
 
 # some custom user alias
 # alias for neovim
-alias nv='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim'
-alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim'
+export PATH="$PATH:/opt/manuel/nvim-linux64-v0.10.2/bin/nvim"
+alias nv='nvim '
+alias nvim='nvim '
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -226,7 +230,10 @@ alias ks="$HOME/.local/kitty.app/bin/kitten ssh"
 export PATH="$PATH:/opt/manuel/tmuxifier/bin"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 export EDITOR="nvim"
-export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
+# Note: When running from devContainer, the variable exist
+if [ -z "${DATA_GIT_PROJECTS_DIR:-}" ]; then
+  export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
+fi
 
 # Tmuxifier to configure tmux sessions
 eval "$(tmuxifier init -)"

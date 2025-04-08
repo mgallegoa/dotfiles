@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# -e: Exit script on any error. -u: Treat unset variables as error. -o: Fail
+set -euo pipefail
+
+declare -x PATH_DOTFILES="$HOME/dotfiles"
+declare -x PATH_DEVCONTAINER_SCRIPT="$PATH_DOTFILES/devContainer"
+declare -x PATH_INSTALL_OPT="/opt/manuel"
+
+################### BASH
+echo "TOOLS-MANUEL - Bash: Create simlink to .bashrc." | tee -a $HOME/setup.log
+ln -sf $PATH_DOTFILES/.bashrc $HOME/.bashrc
+
+################### NERD FONTS
+echo "TOOLS-MANUEL - NerdFonts: Making file executable." | tee -a $HOME/setup.log
+chmod +x $PATH_DEVCONTAINER_SCRIPT/setup-nerdFonts.sh
+echo "TOOLS-MANUEL - NerdFonts: Call file for NerdFonts configuration." | tee -a $HOME/setup.log
+$PATH_DEVCONTAINER_SCRIPT/setup-nerdFonts.sh
+if [ $? -ne 0 ]; then
+  echo "TOOLS-MANUEL - NerdFonts: Error: setup-nerdFonts.sh failed!" | tee -a $HOME/setup.log
+fi
+
+################### OH MY POSH
+echo "TOOLS-MANUEL - OH MY POSH: Installing." | tee -a $HOME/setup.log
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
+################### KITTY
+# NOTE: GUI apps like Kitty won’t run inside the container unless you're forwarding X11 (not common in VS Code DevContainers).
+#
+# echo "TOOLS-MANUEL - KITTY: Making file executable." | tee -a $HOME/setup.log
+# chmod +x $PATH_DEVCONTAINER_SCRIPT/setup-kitty.sh
+# echo "TOOLS-MANUEL - KITTY: Call file for KITTY configuration." | tee -a $HOME/setup.log
+# $PATH_DEVCONTAINER_SCRIPT/setup-kitty.sh
+# if [ $? -ne 0 ]; then
+#   echo "TOOLS-MANUEL - KITTY: Error: setup-kitty.sh failed!" | tee -a $HOME/setup.log
+# fi
+
+################## TMUX
+echo "TOOLS-MANUEL - TMUX: Making file executable." | tee -a $HOME/setup.log
+chmod +x $PATH_DEVCONTAINER_SCRIPT/setup-tmux.sh
+echo "TOOLS-MANUEL - TMUX: Call file for tmux configuration." | tee -a $HOME/setup.log
+$PATH_DEVCONTAINER_SCRIPT/setup-tmux.sh
+if [ $? -ne 0 ]; then
+  echo "TOOLS-MANUEL - TMUX: Error: setup-tmux.sh failed!" | tee -a $HOME/setup.log
+fi
+
+############# opt/manuel : Directory for software used for the user manuel
+echo "TOOLS-MANUEL : Directory for optional software user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
+sudo mkdir $PATH_INSTALL_OPT
+echo "TOOLS-MANUEL : Assign chown to directory to user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
+sudo chown -hR manuel:manuel $PATH_INSTALL_OPT
+
+################## TMUXIFIER
+echo "TOOLS-MANUEL - TMUXIFIER: downloading the souurce code." | tee -a $HOME/setup.log
+chmod +x $PATH_DEVCONTAINER_SCRIPT/setup-tmuxifier.sh
+echo "TOOLS-MANUEL - TMUXIFIER: Call file for tmuxifier configuration." | tee -a $HOME/setup.log
+$PATH_DEVCONTAINER_SCRIPT/setup-tmuxifier.sh
+if [ $? -ne 0 ]; then
+  echo "TOOLS-MANUEL - TMUXIFIER: Error: setup-tmuxifier.sh failed!" | tee -a $HOME/setup.log
+fi
+
+
+################## NVIM - version specifict
+echo "TOOLS-MANUEL - NVIM: downloading prebuild nvim (not source code)." | tee -a $HOME/setup.log
+curl -Lo $PATH_INSTALL_OPT/nvim-linux64-v0.10.2.tar.gz https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz
+echo "TOOLS-MANUEL - NVIM: Unzip in folder $PATH_INSTALL_OPT/nvim-linux64-v0.10.2" | tee -a $HOME/setup.log
+tar -xzf $PATH_INSTALL_OPT/nvim-linux64-v0.10.2.tar.gz -C $PATH_INSTALL_OPT/
+mv $PATH_INSTALL_OPT/nvim-linux64 $PATH_INSTALL_OPT/nvim-linux64-v0.10.2
+rm $PATH_INSTALL_OPT/nvim-linux64-v0.10.2.tar.gz
+echo "TOOLS-MANUEL - NVIM: Creating simlink to config dot files" | tee -a $HOME/setup.log
+mkdir -p "$HOME/.config"
+ln -sf $PATH_DOTFILES/.config/nvim $HOME/.config/
+
+echo "TOOLS-MANUEL : Finished." | tee -a $HOME/setup.log
