@@ -12,6 +12,6 @@ cd $PATH_INSTALL_OPT/nvm-v0.39.7
 git checkout v0.39.7
 
 echo "*** NODE : Installing Node v22.1.0 usin the NVM." | tee -a $HOME/setup.log
-nvm install 22.1.0       # specific version
+$PATH_INSTALL_OPT/nvm-v0.39.7/nvm.sh install 22.1.0       # specific version
 
 echo "*** NVM : Custon configuration finished." | tee -a $HOME/setup.log
