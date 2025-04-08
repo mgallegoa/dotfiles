@@ -242,7 +242,7 @@ alias tfb="tmuxifier load-session tfb_conceptProbes"
 alias tfc="tmuxifier load-session tfc_configurations"
 
 # Node Version Manager NVM
-export NVM_DIR="/opt/manuel/nvm"
+export NVM_DIR="/opt/manuel/nvm-v0.39.7"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
