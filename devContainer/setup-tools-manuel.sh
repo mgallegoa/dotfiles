@@ -44,6 +44,8 @@ if [ $? -ne 0 ]; then
 fi
 
 ############# opt/manuel : Directory for software used for the user manuel
+echo "TOOLS-MANUEL : Directory for optional software user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
+-sudo mkdir $PATH_INSTALL_OPT
 echo "TOOLS-MANUEL : Assign chown to directory to user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
 sudo chown -hR manuel:manuel $PATH_INSTALL_OPT
 
@@ -56,14 +58,10 @@ fi
 
 
 ################## NVIM - version specifict
-echo "TOOLS-MANUEL - NVIM: downloading prebuild nvim (not source code)." | tee -a $HOME/setup.log
-curl -Lo $PATH_INSTALL_OPT/nvim-linux64-v0.10.2.tar.gz https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz
-echo "TOOLS-MANUEL - NVIM: Unzip in folder $PATH_INSTALL_OPT/nvim-linux64-v0.10.2" | tee -a $HOME/setup.log
-tar -xzf $PATH_INSTALL_OPT/nvim-linux64-v0.10.2.tar.gz -C $PATH_INSTALL_OPT/
-mv $PATH_INSTALL_OPT/nvim-linux64 $PATH_INSTALL_OPT/nvim-linux64-v0.10.2
-rm $PATH_INSTALL_OPT/nvim-linux64-v0.10.2.tar.gz
-echo "TOOLS-MANUEL - NVIM: Creating simlink to config dot files" | tee -a $HOME/setup.log
-mkdir -p "$HOME/.config"
-ln -sf $PATH_DOTFILES/.config/nvim $HOME/.config/
+echo "TOOLS-MANUEL - NVIM: Call file for NeoVim configuration." | tee -a $HOME/setup.log
+$PATH_DEVCONTAINER_SCRIPT/setup-nvim.sh
+if [ $? -ne 0 ]; then
+  echo "TOOLS-MANUEL - NVIM: Error: setup-nvim.sh failed!" | tee -a $HOME/setup.log
+fi
 
 echo "TOOLS-MANUEL : Finished." | tee -a $HOME/setup.log
