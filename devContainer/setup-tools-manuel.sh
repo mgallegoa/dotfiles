@@ -7,13 +7,14 @@ declare -x PATH_DOTFILES="$HOME/dotfiles"
 declare -x PATH_DEVCONTAINER_SCRIPT="$PATH_DOTFILES/devContainer"
 declare -x PATH_INSTALL_OPT="/opt/manuel"
 
+echo "TOOLS-MANUEL: Making all files executable in folder $PATH_DEVCONTAINER_SCRIPT." | tee -a $HOME/setup.log
+find $PATH_DEVCONTAINER_SCRIPT -type f -exec chmod +x {} \;
+
 ################### BASH
 echo "TOOLS-MANUEL - Bash: Create simlink to .bashrc." | tee -a $HOME/setup.log
 ln -sf $PATH_DOTFILES/.bashrc $HOME/.bashrc
 
 ################### NERD FONTS
-echo "TOOLS-MANUEL - NerdFonts: Making file executable." | tee -a $HOME/setup.log
-chmod +x $PATH_DEVCONTAINER_SCRIPT/setup-nerdFonts.sh
 echo "TOOLS-MANUEL - NerdFonts: Call file for NerdFonts configuration." | tee -a $HOME/setup.log
 $PATH_DEVCONTAINER_SCRIPT/setup-nerdFonts.sh
 if [ $? -ne 0 ]; then
@@ -36,8 +37,6 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 # fi
 
 ################## TMUX
-echo "TOOLS-MANUEL - TMUX: Making file executable." | tee -a $HOME/setup.log
-chmod +x $PATH_DEVCONTAINER_SCRIPT/setup-tmux.sh
 echo "TOOLS-MANUEL - TMUX: Call file for tmux configuration." | tee -a $HOME/setup.log
 $PATH_DEVCONTAINER_SCRIPT/setup-tmux.sh
 if [ $? -ne 0 ]; then
@@ -45,14 +44,10 @@ if [ $? -ne 0 ]; then
 fi
 
 ############# opt/manuel : Directory for software used for the user manuel
-echo "TOOLS-MANUEL : Directory for optional software user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
-sudo mkdir $PATH_INSTALL_OPT
 echo "TOOLS-MANUEL : Assign chown to directory to user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
 sudo chown -hR manuel:manuel $PATH_INSTALL_OPT
 
 ################## TMUXIFIER
-echo "TOOLS-MANUEL - TMUXIFIER: downloading the souurce code." | tee -a $HOME/setup.log
-chmod +x $PATH_DEVCONTAINER_SCRIPT/setup-tmuxifier.sh
 echo "TOOLS-MANUEL - TMUXIFIER: Call file for tmuxifier configuration." | tee -a $HOME/setup.log
 $PATH_DEVCONTAINER_SCRIPT/setup-tmuxifier.sh
 if [ $? -ne 0 ]; then
