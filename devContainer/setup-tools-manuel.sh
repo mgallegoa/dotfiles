@@ -49,12 +49,20 @@ sudo mkdir $PATH_INSTALL_OPT
 echo "TOOLS-MANUEL : Assign chown to directory to user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
 sudo chown -hR manuel:manuel $PATH_INSTALL_OPT
 
-################## NPM (Node Package Manager)
-echo "TOOLS-MANUEL - NODE (NVM): Call file for node configuration." | tee -a $HOME/setup.log
+################## NODE - NVM (Node Version Manager) - NPM
+echo "TOOLS-MANUEL - NODE (NVM): Call file for Node configuration." | tee -a $HOME/setup.log
 $PATH_DEVCONTAINER_SCRIPT/setup-node.sh
 if [ $? -ne 0 ]; then
   echo "TOOLS-MANUEL - NODE (NVM): Error: setup-node.sh failed!" | tee -a $HOME/setup.log
 fi
+
+################## JAVA - SDKMan
+echo "TOOLS-MANUEL - JAVA (SDKMan): Call file for Java configuration." | tee -a $HOME/setup.log
+$PATH_DEVCONTAINER_SCRIPT/setup-java.sh
+if [ $? -ne 0 ]; then
+  echo "TOOLS-MANUEL - JAVA (SDKMan): Error: setup-java.sh failed!" | tee -a $HOME/setup.log
+fi
+
 
 ################## TMUXIFIER
 echo "TOOLS-MANUEL - TMUXIFIER: Call file for tmuxifier configuration." | tee -a $HOME/setup.log
