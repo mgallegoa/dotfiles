@@ -9,7 +9,7 @@ set -euo pipefail
 
 declare -x PATH_DOTFILES="$HOME/dotfiles"
 
-echo "KITTY : Installing Kitty terminal..." | tee -a $HOME/setup.log
+echo "*** KITTY : Installing Kitty terminal..." | tee -a $HOME/setup.log
 # Download latest Kitty AppImage and install
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh
 
@@ -22,4 +22,4 @@ echo "KITTY : Creating simlink to config dot file." | tee -a $HOME/setup.log
 ln -sf $PATH_DOTFILES/.config/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 ln -sf $PATH_DOTFILES/.config/kitty/current-theme.conf $HOME/.config/kitty/current-theme.conf
 
-echo "KITTY : Kitty installed! Launch it with: ~/.local/bin/kitty , finished." | tee -a $HOME/setup.log
+echo "*** KITTY : Kitty installed! Launch it with: ~/.local/bin/kitty , finished." | tee -a $HOME/setup.log

@@ -11,7 +11,7 @@ declare -x INSTALL_DIR="$HOME/.local/share/fonts"
 
 mkdir -p "$INSTALL_DIR"
 
-echo "NERD-FONTS : Downloading $FONT_NAME..." | tee -a $HOME/setup.log
+echo "*** NERD-FONTS : Downloading $FONT_NAME..." | tee -a $HOME/setup.log
 curl -fLo "$HOME/$FONT_NAME.tar.xz" $FONT_URL
 
 # Unzip to font directory
@@ -25,4 +25,4 @@ rm "$HOME/$FONT_NAME.tar.xz"
 echo "NERD-FONTS : Refreshing font cache..." | tee -a $HOME/setup.log
 fc-cache -fv $INSTALL_DIR
 
-echo "NERD-FONTS : $FONT_NAME $FONT_VARIANT installed!." | tee -a $HOME/setup.log
+echo "*** NERD-FONTS : $FONT_NAME $FONT_VARIANT installed!." | tee -a $HOME/setup.log

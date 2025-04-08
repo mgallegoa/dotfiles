@@ -113,8 +113,8 @@ git config --global color.diff.new "cyan bold"
 # some custom user alias
 # alias for neovim
 export PATH="$PATH:/opt/manuel/nvim-linux64-v0.10.2/bin/nvim"
+alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim '
 alias nv='nvim '
-alias nvim='nvim '
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -232,7 +232,7 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 export EDITOR="nvim"
 # Note: When running from devContainer, the variable exist
 if [ -z "${DATA_GIT_PROJECTS_DIR:-}" ]; then
-  export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa/"
+  export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa"
 fi
 
 # Tmuxifier to configure tmux sessions
@@ -242,7 +242,7 @@ alias tfb="tmuxifier load-session tfb_conceptProbes"
 alias tfc="tmuxifier load-session tfc_configurations"
 
 # Node Version Manager NVM
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="/opt/manuel/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 

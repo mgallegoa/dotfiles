@@ -7,7 +7,7 @@ declare -x PATH_DOTFILES="$HOME/dotfiles"
 declare -x PATH_DEVCONTAINER_SCRIPT="$PATH_DOTFILES/devContainer"
 declare -x PATH_INSTALL_OPT="/opt/manuel"
 
-echo "TOOLS-MANUEL: Making all files executable in folder $PATH_DEVCONTAINER_SCRIPT." | tee -a $HOME/setup.log
+echo "** TOOLS-MANUEL: Making all files executable in folder $PATH_DEVCONTAINER_SCRIPT." | tee -a $HOME/setup.log
 find $PATH_DEVCONTAINER_SCRIPT -type f -exec chmod +x {} \;
 
 ################### BASH
@@ -49,6 +49,13 @@ sudo mkdir $PATH_INSTALL_OPT
 echo "TOOLS-MANUEL : Assign chown to directory to user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
 sudo chown -hR manuel:manuel $PATH_INSTALL_OPT
 
+################## NPM (Node Package Manager)
+echo "TOOLS-MANUEL - NODE (NVM): Call file for node configuration." | tee -a $HOME/setup.log
+$PATH_DEVCONTAINER_SCRIPT/setup-node.sh
+if [ $? -ne 0 ]; then
+  echo "TOOLS-MANUEL - NODE (NVM): Error: setup-node.sh failed!" | tee -a $HOME/setup.log
+fi
+
 ################## TMUXIFIER
 echo "TOOLS-MANUEL - TMUXIFIER: Call file for tmuxifier configuration." | tee -a $HOME/setup.log
 $PATH_DEVCONTAINER_SCRIPT/setup-tmuxifier.sh
@@ -64,4 +71,4 @@ if [ $? -ne 0 ]; then
   echo "TOOLS-MANUEL - NVIM: Error: setup-nvim.sh failed!" | tee -a $HOME/setup.log
 fi
 
-echo "TOOLS-MANUEL : Finished." | tee -a $HOME/setup.log
+echo "** TOOLS-MANUEL : Finished." | tee -a $HOME/setup.log
