@@ -45,7 +45,7 @@ fi
 
 ############# opt/manuel : Directory for software used for the user manuel
 echo "TOOLS-MANUEL : Directory for optional software user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
--sudo mkdir $PATH_INSTALL_OPT
+sudo mkdir $PATH_INSTALL_OPT
 echo "TOOLS-MANUEL : Assign chown to directory to user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
 sudo chown -hR manuel:manuel $PATH_INSTALL_OPT
 
