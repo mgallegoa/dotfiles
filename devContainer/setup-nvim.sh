@@ -18,11 +18,11 @@ ln -sf $PATH_DOTFILES/.config/nvim $HOME/.config/
 sudo ln -s $PATH_DOTFILES/nvim-linux64-v0.10.2/bin/nvim /usr/bin/
 
 echo "NVIM: Run nvim in headless mode to sync Lazy." | tee -a $HOME/setup.log
-nvim --headless "+Lazy! sync" +qa
+# nvim --headless "+Lazy! sync" +qa
 
 echo "NVIM: Install LSP with Mason Api. lua-language-server." | tee -a $HOME/setup.log
-nvim --headless -c 'lua require("mason-registry").refresh()' \
-                -c 'lua require("mason-registry").get("lua-language-server"):install()' \
-                -c 'q'
+# nvim --headless -c 'lua require("mason-registry").refresh()' \
+#                 -c 'lua require("mason-registry").get("lua-language-server"):install()' \
+#                 -c 'q'
 
 echo "*** NVIM : Custon configuration finished." | tee -a $HOME/setup.log
