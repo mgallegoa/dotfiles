@@ -11,9 +11,9 @@ echo "** TOOLS-MANUEL: Making all files executable in folder $PATH_DEVCONTAINER_
 
 ############# opt/manuel : Directory for software used for the user manuel
 echo "TOOLS-MANUEL : Directory for optional software user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
-sudo mkdir -p $PATH_INSTALL_OPT
+sudo -S mkdir -p $PATH_INSTALL_OPT
 echo "TOOLS-MANUEL : Assign chown to directory to user manuel: $PATH_INSTALL_OPT" | tee -a $HOME/setup.log
-sudo chown -hR manuel:manuel $PATH_INSTALL_OPT
+sudo -S chown -hR manuel:manuel $PATH_INSTALL_OPT
 find $PATH_DEVCONTAINER_SCRIPT -type f -exec chmod +x {} \;
 
 ################### BASH
