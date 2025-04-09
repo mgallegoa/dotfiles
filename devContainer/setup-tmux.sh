@@ -12,10 +12,11 @@ else
   echo "*** TMUX : Cloning to folder $PATH_INSTALL_OPT/tmux-v3.4" | tee -a $HOME/setup.log
   git clone https://github.com/tmux/tmux.git $PATH_INSTALL_OPT/tmux-v3.4
   cd $PATH_INSTALL_OPT/tmux-v3.4
-  git checkout 3.4
+  git checkout -q 3.4
   echo "TMUX : running the autogen.sh in folder $PATH_INSTALL_OPT/tmux-v3.4" | tee -a $HOME/setup.log
   sh autogen.sh
-  ./configure && make
+  ./configure  --prefix=$PATH_INSTALL_OPT/tmux-v3.4 
+  make && make install
 fi
 
 echo "TMUX : Creating simlink to config dot file." | tee -a $HOME/setup.log

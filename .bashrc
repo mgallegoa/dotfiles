@@ -226,6 +226,10 @@ alias ke="$HOME/.local/kitty.app/bin/kitten"
 alias kec="$HOME/.local/kitty.app/bin/kitten icat"
 alias ks="$HOME/.local/kitty.app/bin/kitten ssh"
 
+# Tmux : Configure specific tmux version
+export PATH="$PATH:/opt/manuel/tmux-v3.4/bin/tmux"
+alias tmux='/opt/manuel/tmux-v3.4/bin/tmux'
+
 # Tmuxifier for configure sessions in tmux
 export PATH="$PATH:/opt/manuel/tmuxifier/bin"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
