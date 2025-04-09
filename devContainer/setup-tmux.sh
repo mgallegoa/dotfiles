@@ -26,7 +26,7 @@ echo "TMUX : Cloning the tmux plugin manager." | tee -a $HOME/setup.log
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 echo "TMUX : Install plugins." | tee -a $HOME/setup.log
-ln -s /opt/manuel/tmux-v3.4/bin/tmux /usr/bin/
+sudo ln -s /opt/manuel/tmux-v3.4/bin/tmux /usr/bin/
 $HOME/.tmux/plugins/tpm/bin/install_plugins
 
 echo "*** TMUX : Custon configuration finished." | tee -a $HOME/setup.log
