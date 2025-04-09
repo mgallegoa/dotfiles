@@ -15,7 +15,7 @@ rm $PATH_INSTALL_OPT/nvim-linux64-v0.10.2.tar.gz
 echo "NVIM: Creating simlink to config dot files" | tee -a $HOME/setup.log
 mkdir -p "$HOME/.config"
 ln -sf $PATH_DOTFILES/.config/nvim $HOME/.config/
-sudo ln -s $PATH_DOTFILES/nvim-linux64-v0.10.2/bin/nvim  /usr/bin/
+sudo ln -s $PATH_DOTFILES/nvim-linux64-v0.10.2/bin/nvim /usr/bin/
 
 echo "NVIM: Run nvim in headless mode to sync Lazy." | tee -a $HOME/setup.log
 nvim --headless "+Lazy! sync" +qa
