@@ -16,4 +16,12 @@ echo "NVIM: Creating simlink to config dot files" | tee -a $HOME/setup.log
 mkdir -p "$HOME/.config"
 ln -sf $PATH_DOTFILES/.config/nvim $HOME/.config/
 
+echo "NVIM: Run nvim in headless mode to sync Lazy." | tee -a $HOME/setup.log
+nvim --headless "+Lazy! sync" +qa
+
+echo "NVIM: Install LSP with Mason Api. lua-language-server." | tee -a $HOME/setup.log
+nvim --headless -c 'lua require("mason-registry").refresh()' \
+                -c 'lua require("mason-registry").get("lua-language-server"):install()' \
+                -c 'q'
+
 echo "*** NVIM : Custon configuration finished." | tee -a $HOME/setup.log
