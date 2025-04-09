@@ -4,8 +4,21 @@
 set -euo pipefail
 
 declare -x PATH_DOTFILES="$HOME/dotfiles"
+declare -x PATH_INSTALL_OPT="/opt/manuel"
 
-echo "*** TMUX : Creating simlink to config dot file." | tee -a $HOME/setup.log
+if command -v tmux &> /dev/null; then
+  echo "*** TMUX : The program is instaled." | tee -a $HOME/setup.log
+else
+  echo "*** TMUX : Cloning to folder $PATH_INSTALL_OPT/tmux-v3.4" | tee -a $HOME/setup.log
+  git clone https://github.com/tmux/tmux.git $PATH_INSTALL_OPT/tmux-v3.4
+  cd tmux-v3.4
+  git checkout 3.4
+  echo "TMUX : running the autogen.sh in folder $PATH_INSTALL_OPT/tmux-v3.4" | tee -a $HOME/setup.log
+  sh autogen.sh
+  ./configure && make
+fi
+
+echo "TMUX : Creating simlink to config dot file." | tee -a $HOME/setup.log
 ln -sf $PATH_DOTFILES/.tmux.conf $HOME/.tmux.conf
 
 echo "TMUX : Cloning the tmux plugin manager." | tee -a $HOME/setup.log
