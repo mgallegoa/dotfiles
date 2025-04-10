@@ -12,9 +12,8 @@ echo "TMUXIFIER : Creating simlink to .tmux-layouts." | tee -a $HOME/setup.log
 ln -sf $PATH_DOTFILES/.tmux-layouts $HOME/
 mkdir $HOME/mgallegoa
 echo "TMUXIFIER : Cloning the personal projects." | tee -a $HOME/setup.log
-cd $HOME/mgallegoa
-git clone https://github.com/mgallegoa/conceptsProbes.git
-git clone https://github.com/mgallegoa/csv-node-react.git
-git clone https://github.com/mgallegoa/mgallegoa.github.io.git
+git clone https://github.com/mgallegoa/conceptsProbes.git $HOME/mgallegoa
+git clone https://github.com/mgallegoa/csv-node-react.git $HOME/mgallegoa
+git clone https://github.com/mgallegoa/mgallegoa.github.io.git $HOME/mgallegoa
 
 echo "*** TMUXIFIER : Custon configuration finished." | tee -a $HOME/setup.log

@@ -104,7 +104,7 @@ alias l='ls -CF'
 # Set language utf-8 (this is default for Ubuntu but not for DevContainer debian)
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 
 # GIT : Configure the color for diff
 git config --global color.diff.frag "yellow bold"
