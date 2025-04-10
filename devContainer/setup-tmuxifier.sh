@@ -12,9 +12,9 @@ git clone https://github.com/jimeh/tmuxifier.git $PATH_INSTALL_OPT/tmuxifier
 echo "TMUXIFIER : Creating simlink to .tmux-layouts." | tee -a $HOME/setup.log
 ln -sf $PATH_DOTFILES/.tmux-layouts $HOME/
 mkdir -p $PATH_WORKSPACE
+cd $PATH_WORKSPACE
 echo "TMUXIFIER : Cloning the personal projects." | tee -a $HOME/setup.log
-git clone https://github.com/mgallegoa/conceptsProbes.git $PATH_WORKSPACE/conceptsProbes
-git clone https://github.com/mgallegoa/csv-node-react.git $PATH_WORKSPACE/csv-node-react.git
-git clone https://github.com/mgallegoa/mgallegoa.github.io.git $PATH_WORKSPACE/mgallegoa.github.io
+git clone https://github.com/mgallegoa/conceptsProbes.git
+git clone https://github.com/mgallegoa/mgallegoa.github.io.git
 
 echo "*** TMUXIFIER : Custon configuration finished." | tee -a $HOME/setup.log
