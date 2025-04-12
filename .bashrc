@@ -97,9 +97,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -CF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -alFh'
 
 # Set language utf-8 (this is default for Ubuntu but not for DevContainer debian)
 export LANG=en_US.UTF-8
