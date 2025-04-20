@@ -18,6 +18,9 @@ vim.wo.relativenumber = true
 vim.wo.number = true
 vim.o.scrolloff = 10
 
+-- clipboard copy and paste from SO
+vim.cmd("set clipboard^=unnamed,unnamedplus")
+
 -- Enable spell checking by default
 vim.o.spell = true
 vim.o.spelllang = "en_us"
