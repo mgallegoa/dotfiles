@@ -96,11 +96,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -CF'
-alias la='ls -A'
-alias l='ls -alFh'
-
 # Set language utf-8 (this is default for Ubuntu but not for DevContainer debian)
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -109,12 +104,6 @@ export LANGUAGE=en_US.UTF-8
 # GIT : Configure the color for diff
 git config --global color.diff.frag "yellow bold"
 git config --global color.diff.new "cyan bold"
-
-# some custom user alias
-# alias for neovim
-export PATH="$PATH:/opt/manuel/nvim-linux64-v0.10.2/bin/nvim"
-alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim '
-alias nv='nvim '
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -216,34 +205,29 @@ export SCM_CHECK=true
 # Load Bash It
 #source "$BASH_IT"/bash_it.sh
 
+# Nvim add to PATH
+export PATH="$PATH:/opt/manuel/nvim-linux64-v0.10.2/bin/nvim"
+export EDITOR="nvim"
+
 # RIPGREP
 export PATH="$PATH:/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/"
 
 # Terminal kitty
 export PATH="$PATH:$HOME/.local/kitty.app/bin/kitty"
-alias k="$HOME/.local/kitty.app/bin/kitty"
-alias ke="$HOME/.local/kitty.app/bin/kitten"
-alias kec="$HOME/.local/kitty.app/bin/kitten icat"
-alias ks="$HOME/.local/kitty.app/bin/kitten ssh"
 
 # Tmux : Configure specific tmux version
 export PATH="$PATH:/opt/manuel/tmux-v3.4/bin/tmux"
-alias tmux='/opt/manuel/tmux-v3.4/bin/tmux'
 
 # Tmuxifier for configure sessions in tmux
 export PATH="$PATH:/opt/manuel/tmuxifier/bin"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
-export EDITOR="nvim"
+if command -v tmuxifier >/dev/null 2>&1; then
+  eval "$(tmuxifier init -)"
+fi
 # Note: When running from devContainer, the variable exist
 if [ -z "${DATA_GIT_PROJECTS_DIR:-}" ]; then
   export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa"
 fi
-
-# Tmuxifier to configure tmux sessions
-eval "$(tmuxifier init -)"
-alias tfa="tmuxifier load-session tfa_portfolioManuel"
-alias tfb="tmuxifier load-session tfb_conceptProbes"
-alias tfc="tmuxifier load-session tfc_configurations"
 
 # Node Version Manager NVM
 export NVM_DIR="/opt/manuel/nvm-v0.39.7"
