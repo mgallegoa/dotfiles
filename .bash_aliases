@@ -22,5 +22,33 @@ alias tfa="tmuxifier load-session tfa_portfolioManuel"
 alias tfb="tmuxifier load-session tfb_conceptProbes"
 alias tfc="tmuxifier load-session tfc_configurations"
 
+# Internet: Check internet status and IP
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
+alias extip="curl icanhazip.com"
+alias ip="curl ipinfo.io"
 
+# Hotspotshield : Free VPN
+alias hs='hotspotshield status'
+alias hil='hotspotshield connect il'
+alias hd='hotspotshield disconnect'
+alias hsg='hotspotshield connect sg'
+alias hl='hotspotshield locations'
+alias hus="hotspotshield connect us"
+alias usphx="hotspotshield connect phx"
 
+# sudo apt install youtube-dl
+# youtube-dl : For download videos from Youtube and other
+alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+alias yta-best="youtube-dl --extract-audio --audio-format best "
+alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+alias yta-opus="youtube-dl --extract-audio --audio-format opus "
+alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
+alias yta-wav="youtube-dl --extract-audio --audio-format wav "
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+
+# DOCKER COMMANDS
+# Edit docker deamon
+alias d-deamon="nvim /etc/docker/daemon.json" # {  "dns": ["8.8.8.8", "8.8.4.4"] }
+alias d-restart="sudo systemctl restart docker"
