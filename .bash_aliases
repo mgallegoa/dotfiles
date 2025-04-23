@@ -1,10 +1,21 @@
+# Use \cp to ignore cp alias
+# v: verbose, show the action
+# i: interrogate, show to confirm the action
+# r: recursive, copy/remove in recursive
+# p: parent, create parent directories
 # some more ls aliases
+alias cp='cp -vir'
+alias mv='mv -vi'
+alias mkdir='mkdir -vp'
 alias ll='ls -CF'
 alias la='ls -A'
 alias l='ls -alFh'
 
-# some custom user alias
-# alias for neovim
+# Git
+alias g-name="git config --global user.name 'Manuel Arias'"
+alias g-config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+
+# Neovim
 alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim '
 alias nv='nvim '
 
@@ -21,6 +32,11 @@ alias tmux='/opt/manuel/tmux-v3.4/bin/tmux'
 alias tfa="tmuxifier load-session tfa_portfolioManuel"
 alias tfb="tmuxifier load-session tfb_conceptProbes"
 alias tfc="tmuxifier load-session tfc_configurations"
+
+# DOCKER COMMANDS
+# Edit docker deamon
+alias d-deamon="nvim /etc/docker/daemon.json" # {  "dns": ["8.8.8.8", "8.8.4.4"] }
+alias d-restart="sudo systemctl restart docker"
 
 # Internet: Check internet status and IP
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
@@ -48,7 +64,5 @@ alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
-# DOCKER COMMANDS
-# Edit docker deamon
-alias d-deamon="nvim /etc/docker/daemon.json" # {  "dns": ["8.8.8.8", "8.8.4.4"] }
-alias d-restart="sudo systemctl restart docker"
+# Fun stuffs
+alias touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
