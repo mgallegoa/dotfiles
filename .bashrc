@@ -129,6 +129,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Enable completion for sudo
+complete -cf sudo
+
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
