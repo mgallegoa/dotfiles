@@ -247,7 +247,7 @@ eval "$(oh-my-posh --init --shell bash --config $HOME/.cache/oh-my-posh/themes/$
 export PATH="$PATH:/opt/dbeaver/"
 
 # Chafa
-export PATH="$PATH:/opt/manuel/chafa-1.14.5-1-x86_64-linux-gnu"
+export PATH="/opt/manuel/chafa-1.14.5-1-x86_64-linux-gnu:$PATH"
 
 # Turso
 export PATH="$PATH:/home/manuel/.turso"

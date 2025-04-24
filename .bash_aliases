@@ -17,6 +17,10 @@ alias l-yacy="cd yacy && ./startYACY.sh" # Need to install Yacy Engine via termi
 # Git
 alias g-name="git config --global user.name 'Manuel Arias'"
 alias g-config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias g-restart-agent='eval "$(ssh-agent -s)"' # Restart the ssh agent
+alias g-add-agent='ssh-add ' # To add the private key to the agent
+alias g-show-remote='git remote -v ' # Show the URLs used for push and pull
+alias g-set-remote='git remote set-url origin ' # Set the remote URL for the repo
 
 # Neovim
 alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim '
@@ -78,3 +82,4 @@ alias fun-matrix="cmatrix" # nice matrix effect in console
 alias fun-tail-logs="tail -f /var/log/syslog" # show system logs
 alias fun-delete-big-file="truncate -s 0 bigFile.txt" # Warning, delete the file content
 alias fun-output-in-column="mount | column -t" # easy to read the output
+alias fun-purge="dpkg -l | grep '^rc' | awk '{print $2}' | xargs sudo apt-get purge -y"
