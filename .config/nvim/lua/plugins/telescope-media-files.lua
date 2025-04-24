@@ -30,10 +30,10 @@ return {
 						find_cmd = "rg", -- find command defaults to `fd`
 						-- command_open_imen = "display" -- Example to use imageMagick to show the image instead default eog
 						-- command_open_image = 'gnome-terminal -- env TMUX="" kitty --hold kitten ica' -- Example to use the kitty terminal for the images
-						tmux_resize_open_pane = 30,
+						-- command_open_thumbnail = "kitten icat",
 						show_file_details = 0,
-						command_open_thumbnail = "kitten icat",
-						tmux_command_open_thumbnail = "kitten icat",
+
+						tmux_resize_open_pane = 30,
 						tmux_time_wait = 0.5,
 						-- tmux_index_pane_thumbnail = 2,
 					},
