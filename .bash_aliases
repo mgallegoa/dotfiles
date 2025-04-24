@@ -10,6 +10,9 @@ alias mkdir='mkdir -vp'
 alias ll='ls -CF'
 alias la='ls -A'
 alias l='ls -alFh'
+alias lx='axe -bghHliS' # This is a program to replace ls
+alias ld='lsd -hA --group-dirs first' # Replace ls, more configurable
+alias l-yacy="cd yacy && ./startYACY.sh" # Need to install Yacy Engine via terminal from Yacy website
 
 # Git
 alias g-name="git config --global user.name 'Manuel Arias'"
@@ -21,9 +24,9 @@ alias nv='nvim '
 
 # Terminal kitty
 alias k="$HOME/.local/kitty.app/bin/kitty"
-alias ke="$HOME/.local/kitty.app/bin/kitten"
-alias kec="$HOME/.local/kitty.app/bin/kitten icat"
+alias ki="$HOME/.local/kitty.app/bin/kitten icat"
 alias ks="$HOME/.local/kitty.app/bin/kitten ssh"
+alias kd="$HOME/.local/kitty.app/bin/kitten diff"
 
 # Tmux : Configure specific tmux version
 alias tmux='/opt/manuel/tmux-v3.4/bin/tmux'
