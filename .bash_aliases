@@ -65,4 +65,13 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # Fun stuffs
-alias touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
+alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
+alias fun-find-file='find / -name "*.conf*" | grep db' # to find a configuration file for db
+alias fun-previous-commad="!!" # run the most recent command
+alias fun-previous-history="!2" # history command show the number of the command
+alias fun-history-add-time='HISTTIMEFORMAT="%Y-%m-%d %T "' # add the date/time to the history
+alias fun-show-back-ground='fg' # to sent a program to background press Ctrl+z 
+alias fun-matrix="cmatrix" # nice matrix effect in console
+alias fun-tail-logs="tail -f /var/log/syslog" # show system logs
+alias fun-delete-big-file="truncate -s 0 bigFile.txt" # Warning, delete the file content
+alias fun-output-in-column="mount | column -t" # easy to read the output
