@@ -44,6 +44,7 @@ alias tfc="tmuxifier load-session tfc_configurations"
 # Edit docker deamon
 alias d-deamon="nvim /etc/docker/daemon.json" # {  "dns": ["8.8.8.8", "8.8.4.4"] }
 alias d-restart="sudo systemctl restart docker"
+alias d-additional="${HOME}/setup-tools/setup-tools-manuel-additional.sh"
 
 # Internet: Check internet status and IP
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
@@ -70,6 +71,9 @@ alias yta-opus="youtube-dl --extract-audio --audio-format opus "
 alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+
+# Java
+alias j-install="sdk install java 21.0.6-tem"
 
 # Fun stuffs
 alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
