@@ -124,13 +124,13 @@ fi
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
+    complete -cf sudo # Enable completion for sudo
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+    complete -cf sudo # Enable completion for sudo
   fi
-fi
 
-# Enable completion for sudo
-complete -cf sudo
+fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -139,7 +139,7 @@ case $- in
 esac
 
 # Path to the bash it configuration
-export BASH_IT="/home/manuel/.bash_it"
+# export BASH_IT="$HOME/.bash_it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -209,24 +209,25 @@ export SCM_CHECK=true
 #source "$BASH_IT"/bash_it.sh
 
 # Nvim add to PATH
-export PATH="$PATH:/opt/manuel/nvim-linux64-v0.10.2/bin/nvim"
+export PATH="/opt/manuel/nvim-linux64-v0.10.2/bin/nvim:$PATH"
 export EDITOR="nvim"
 
 # RIPGREP
-export PATH="$PATH:/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/"
+export PATH="/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/:$PATH"
 
 # Terminal kitty
-export PATH="$PATH:$HOME/.local/kitty.app/bin/kitty"
+export PATH="$HOME/.local/kitty.app/bin/kitty:$PATH"
 
 # Tmux : Configure specific tmux version
-export PATH="$PATH:/opt/manuel/tmux-v3.4/bin/tmux"
+export PATH="/opt/manuel/tmux-v3.4/bin/tmux:$PATH"
 
 # Tmuxifier for configure sessions in tmux
-export PATH="$PATH:/opt/manuel/tmuxifier/bin"
+export PATH="/opt/manuel/tmuxifier/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 if command -v tmuxifier >/dev/null 2>&1; then
   eval "$(tmuxifier init -)"
 fi
+
 # Note: When running from devContainer, the variable exist
 if [ -z "${DATA_GIT_PROJECTS_DIR:-}" ]; then
   export DATA_GIT_PROJECTS_DIR="/media/manuel/Datos/mgallegoa"
@@ -238,27 +239,25 @@ export NVM_DIR="/opt/manuel/nvm-v0.39.7"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Custon theme catppuccin from oh-my-posh
-export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$HOME/.local/bin:$PATH"
 #export POSH_THEME="blueish"
 export POSH_THEME="night-owl"
 eval "$(oh-my-posh --init --shell bash --config $HOME/.cache/oh-my-posh/themes/$POSH_THEME.omp.json)"
 
 # Data Bases DBeaver UI Client
-export PATH="$PATH:/opt/dbeaver/"
+export PATH="/opt/dbeaver:$PATH"
 
 # Chafa
 export PATH="/opt/manuel/chafa-1.14.5-1-x86_64-linux-gnu:$PATH"
 
 # Turso
-export PATH="$PATH:/home/manuel/.turso"
+export PATH="$HOME/.turso:$PATH"
 
-export PATH=/home/manuel/bin:$PATH
-
+# Oracle CLI
 [[ -e "/home/manuel/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/manuel/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 # export SDKMAN_DIR="$HOME/.sdkman"
 # [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 export SDKMAN_DIR="/opt/manuel/sdkman"
  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
