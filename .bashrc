@@ -15,6 +15,26 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# Note: Just welcome one time per reboot. To set per session put in .profile or .bash_profile file
+if [ ! -f /tmp/.welcome_manuel ]; then
+  echo "##############################################################"
+  echo "#                                                            #"
+  echo "#   ███╗░░░███╗░█████╗░███╗░░██╗██╗░░░██╗███████╗██╗░░░░░    #"
+  echo "#   ████╗░████║██╔══██╗████╗░██║██║░░░██║██╔════╝██║░░░░░    #"
+  echo "#   ██╔████╔██║███████║██╔██╗██║██║░░░██║█████╗░░██║░░░░░    #"
+  echo "#   ██║╚██╔╝██║██╔══██║██║╚████║██║░░░██║██╔══╝░░██║░░░░░    #"
+  echo "#   ██║░╚═╝░██║██║░░██║██║░╚███║╚██████╔╝███████╗███████╗    #"
+  echo "#   ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚══════╝╚══════╝    #"
+  echo "#                                                            #"
+  echo "# Welcome to my personal configuration.                      #"
+  echo "# To see the list of the alias, write alias in the console.  #"
+  echo "# This configuration is located in the repository:           #"
+  echo "# https://www.github.com/mgallegoa/dotfiles                  #"
+  echo "# !!Enjoy!!                                                  #"
+  echo "##############################################################"
+  touch /tmp/.welcome_manuel
+fi
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
