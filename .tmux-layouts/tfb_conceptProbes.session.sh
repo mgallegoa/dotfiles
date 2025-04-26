@@ -18,10 +18,16 @@ if initialize_session "tfb_conceptProbes"; then
   run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/rest-api-node" 
   run_cmd "nvim src/app.js"
 
+ # DEPRECATED PROJECT
  # 4 Create a new window for the React New Features project
-  new_window "React New Features"
-  run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/reactnewfeatures"
-  run_cmd "nvim src/App.js"
+  # new_window "React New Features"
+  # run_cmd "cd $DATA_GIT_PROJECTS_DIR/conceptsProbes/reactnewfeatures"
+  # run_cmd "nvim src/App.js"
+
+ # 4 Create a new window for my development container
+  new_window "dev-container"
+  run_cmd "cd $DATA_GIT_PROJECTS_DIR/dev-container/"
+  run_cmd "nvim README.md"
 
  # 5 Create a new window for the csv load and search with Node and React project
   new_window "CSV file load"
@@ -35,7 +41,7 @@ if initialize_session "tfb_conceptProbes"; then
 
 
   # Select the default active window on session creation.
-  select_window 6
+  select_window 5
 
 fi
 
