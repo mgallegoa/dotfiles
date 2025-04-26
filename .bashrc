@@ -33,6 +33,15 @@ if [ ! -f /tmp/.welcome_manuel ]; then
   echo "# !!Enjoy!!                                                  #"
   echo "##############################################################"
   touch /tmp/.welcome_manuel
+
+  # echo -e "\033[0;36m"
+  # echo ""
+  # echo "   ▀▄   ▄▀  "
+  # echo -e "  ▄█▀███▀█▄  \033[1;31m \033[0;36m Manuel personal configurations. Enjoy!!!"
+  # echo " █▀███████▀█"
+  # echo " ▀ ▀▄▄ ▄▄▀ ▀"
+  # echo ""
+  # echo -e "\033[m"
 fi
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -83,6 +92,7 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # PS1='\[\033[1;33m\]\u\]\[\033[1;37m\]@\[\033[1;32m\]\h \[\e[1;36m\][\l] \[\033[1;31m\][\w] \n\[\033[1;31m\]>> \[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -119,7 +129,7 @@ fi
 # Set language utf-8 (this is default for Ubuntu but not for DevContainer debian)
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-# export LC_ALL=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # GIT : Configure the color for diff
 git config --global color.diff.frag "yellow bold"
@@ -228,9 +238,39 @@ export SCM_CHECK=true
 # Load Bash It
 #source "$BASH_IT"/bash_it.sh
 
+# PLAY WITH COWSAY - COWTHINK: generate random messages. Require cowsay, fortune. cowsay -l -> to see list of images
+# dir='/usr/share/cows/'
+# file=`/bin/ls -1 "$dir" | sort --random-sort | head -1`
+# cow=$(echo "$file" | sed -e "s/\.cow//")
+# fortune -a | cowsay -f $cow
+
+# EXTRACT function to extract files.
+extract () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjfv $1     ;;
+        *.tar.gz)    tar xzfv $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xfv $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
 # Nvim add to PATH
 export PATH="/opt/manuel/nvim-linux64-v0.10.2/bin/nvim:$PATH"
 export EDITOR="nvim"
+# Set vi mode in BASH Shell
+# set -o vi
 
 # RIPGREP
 export PATH="/opt/ripgrep-14.1.0-x86_64-unknown-linux-musl/:$PATH"
