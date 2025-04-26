@@ -27,7 +27,7 @@ alias g-restart-agent='eval "$(ssh-agent -s)"' # Restart the ssh agent
 alias g-add-agent='ssh-add ' # To add the private key to the agent
 alias g-show-remote='git remote -v ' # Show the URLs used for push and pull
 alias g-set-remote='git remote set-url origin ' # Set the remote URL for the repo
-alias gs="git status"
+alias gt="git status"
 alias gl="git log --graph --decorate --oneline" # Show only the logs id and commit messages
 
 # Neovim
