@@ -4,23 +4,31 @@
 # r: recursive, copy/remove in recursive
 # p: parent, create parent directories
 # some more ls aliases
-alias cp='cp -vir'
-alias mv='mv -vi'
-alias mkdir='mkdir -vp'
-alias ll='ls -CF'
-alias la='ls -A'
-alias l='ls -alFh'
+alias cp='cp -vir' # copy in verbose and ask to confirm
+alias mv='mv -vi' # move in verbose and ask to confirm
+alias mkdir='mkdir -vp' # mkdir verbose and create parent
+alias df='df -h' # disk free for humans
+alias ll='ls -CF --group-directories-first' # -C: columns, F: add / for directories. Show first the directories
+alias la='ls -a --group-directories-first' # -a: list all (included hidden). Show first the directories
+alias l='ls -alFh --group-directories-first' # Detailed list for all directories and h: human size. Show first the directories
+alias l.='ls -alFhd .[^.]* --group-directories-first' # Show only hidden files/folders (ls | grep "^\.")
+alias l.d='ls -alFh .[^.]* --group-directories-first' # Show only hidden files/folders and content inside of directories
+alias ..="cd .. && l"
+alias ...="cd ../../ && l"
+alias 3.="cd ../../../ && l"
 alias lx='axe -bghHliS' # This is a program to replace ls
 alias ld='lsd -hA --group-dirs first' # Replace ls, more configurable
 alias l-yacy="cd yacy && ./startYACY.sh" # Need to install Yacy Engine via terminal from Yacy website
 
 # Git
-alias g-name="git config --global user.name 'Manuel Arias'"
-alias g-config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias g-config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME" # Set the git configuration
+alias g-name="git config --global user.name 'Manuel Arias'" # Git configuration for the user.name
 alias g-restart-agent='eval "$(ssh-agent -s)"' # Restart the ssh agent
 alias g-add-agent='ssh-add ' # To add the private key to the agent
 alias g-show-remote='git remote -v ' # Show the URLs used for push and pull
 alias g-set-remote='git remote set-url origin ' # Set the remote URL for the repo
+alias gs="git status"
+alias gl="git log --graph --decorate --oneline" # Show only the logs id and commit messages
 
 # Neovim
 alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim '
@@ -36,9 +44,9 @@ alias kd="$HOME/.local/kitty.app/bin/kitten diff"
 alias tmux='/opt/manuel/tmux-v3.4/bin/tmux'
 
 # Tmuxifier to configure tmux sessions
-alias tfa="tmuxifier load-session tfa_portfolioManuel"
-alias tfb="tmuxifier load-session tfb_conceptProbes"
-alias tfc="tmuxifier load-session tfc_configurations"
+alias tfa="tmuxifier load-session tfa_portfolioManuel" # Personal project portfolio Manuel
+alias tfb="tmuxifier load-session tfb_conceptProbes" # Personal project concept probes
+alias tfc="tmuxifier load-session tfc_configurations" # Open the configurations (nvim, tmux, bash, kitty, telescope media files)
 
 # DOCKER COMMANDS
 # Edit docker deamon
@@ -73,9 +81,10 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # Java
-alias j-install="sdk install java 21.0.6-tem"
+alias ij="sdk install java 21.0.6-tem"
 
 # Fun stuffs
+alias please="sudo !!"
 alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
 alias fun-find-file='find / -name "*.conf*" | grep db' # to find a configuration file for db
 alias fun-previous-commad="!!" # run the most recent command
@@ -86,4 +95,14 @@ alias fun-matrix="cmatrix" # nice matrix effect in console
 alias fun-tail-logs="tail -f /var/log/syslog" # show system logs
 alias fun-delete-big-file="truncate -s 0 bigFile.txt" # Warning, delete the file content
 alias fun-output-in-column="mount | column -t" # easy to read the output
-alias fun-purge="dpkg -l | grep '^rc' | awk '{print $2}' | xargs sudo apt-get purge -y"
+alias fun-purge="dpkg -l | grep '^rc' | awk '{print $2}' | xargs sudo apt-get purge -y" # Purge the unused packages in linux
+alias fun-variables="printenv" # Show a list of environment variables.
+alias fun-clipboard-ui="ps aux | grep -E 'copyq|clipman|parcellite|gpaste|glipper|klipper|clipit'" # Check if exist clipboard ui.
+alias fun-ps="ps auxf" # all processes, display user-oriented format, show processes that aren't attached to ttys, use full-format listing"
+alias fun-ps-sr="ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -10" # list top 10 cpu-intensive processes
+alias fun-psmem="ps auxf | sort -nr -k 4" # get top process eating memory
+alias fun-psmem10="ps auxf | sort -nr -k 4 | head -10" # get top 10 process eating memory
+alias fun-pscpu="ps auxf | sort -nr -k 3" # get top process eating memory
+alias fun-pscpu10="ps auxf | sort -nr -k 3 | head -10" # get top 10 process eating memory
+alias fun-tar="tar -cvzf" # c: create new archive, v: verbose, z: filger gzip, f: use file
+alias fun-bash-options="shopt" # Show_options: display bash options settings
