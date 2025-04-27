@@ -18,8 +18,8 @@ vim.wo.relativenumber = true
 vim.wo.number = true
 vim.o.scrolloff = 10
 
--- clipboard copy and paste from SO
-vim.cmd("set clipboard^=unnamed,unnamedplus")
+-- clipboard copy and paste from SO. Comment for personal copy and past see <leader>y keys
+-- vim.cmd("set clipboard^=unnamed,unnamedplus")
 
 -- Enable spell checking by default
 vim.o.spell = true
