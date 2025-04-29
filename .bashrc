@@ -313,6 +313,10 @@ export PATH="/opt/manuel/chafa-1.14.5-1-x86_64-linux-gnu:$PATH"
 # Turso
 export PATH="$HOME/.turso:$PATH"
 
+# DEPRECATED USE: isomorphic in combination with xclip to use the clipboard between host and docker
+# export ISOCP_USE_FILE=1
+# export PATH="~/isomorphic_copy/bin:$PATH"
+
 # Oracle CLI
 [[ -e "/home/manuel/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/manuel/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
