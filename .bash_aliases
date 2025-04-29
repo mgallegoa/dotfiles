@@ -4,7 +4,14 @@
 # r: recursive, copy/remove in recursive
 # p: parent, create parent directories
 # some more ls aliases
-alias cp='cp -vir' # copy in verbose and ask to confirm
+alias cp='cp -vir' # copy files/dir in verbose and ask to confirm
+# To check the type of session use: echo $XDG_SESSION_TYPE (x11 or wayland)
+alias xc="xclip -selection clipboard" # Copy to the clipboard using xclip (paste add -o). for x11. isomorphic_copy
+alias wc="wl-copy" # Copy to the clipboard using wl-clipboard. for Wayland. echo $XDG_SESSION_TYPE (wayland)
+alias wp="wl-paste" # Copy to the clipboard using wl-clipboard. for Wayland.
+alias tc="echo 'Use Ctrl+b and ], to copy from tmux paste-buffer. Use Shift + Insert to copy from local clipboard.'"
+alias te="tmux show-buffer > $DATA_GIT_PROJECTS_DIR/clipboard" # external Send the paste-buffer to a file in the shared volume
+alias ti="scp -P 22 ip172-18-0-6-d08jgsiim2rg00a73v00@direct.labs.play-with-docker.com:/root/mgallegoa/clipboard $DATA_GIT_PROJECTS_DIR/clipboard" # internal Paste clipboard file from remote host, for example PWD Play With Docker
 alias mv='mv -vi' # move in verbose and ask to confirm
 alias mkdir='mkdir -vp' # mkdir verbose and create parent
 alias df='df -h' # disk free for humans
