@@ -90,6 +90,10 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 # Java
 alias ij="sdk install java 21.0.6-tem"
 
+# Node
+alias typescript-node="npx tsc --init --rootDir src --outDir dist --strict --esModuleInterop --resolveJsonModule --target ES2022 --module ES2022 --moduleResolution NodeNext" # For Node project. https://json.schemastore.org/tsconfig
+alias typescript-eslint="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint" # install typescript+eslint https://typescript-eslint.io/getting-started/
+
 # Fun stuffs
 alias please="sudo !!"
 alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
