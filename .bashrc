@@ -313,7 +313,7 @@ export PATH="/opt/manuel/chafa-1.14.5-1-x86_64-linux-gnu:$PATH"
 # Turso
 export PATH="$HOME/.turso:$PATH"
 
-# DEPRECATED USE: isomorphic in combination with xclip to use the clipboard between host and docker
+# DEPRECATED USE: isomorphic in combination with xclip, xsel or wayland to use the clipboard between host and docker
 # export ISOCP_USE_FILE=1
 # export PATH="~/isomorphic_copy/bin:$PATH"
 
