@@ -91,13 +91,19 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 alias ij="sdk install java 21.0.6-tem"
 
 # Node
-alias typescript-node="npx tsc --init --rootDir src --outDir dist --strict --esModuleInterop --resolveJsonModule --target ES2022 --module ES2022 --moduleResolution NodeNext" # For Node project. https://json.schemastore.org/tsconfig
-alias typescript-eslint="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint" # install typescript+eslint https://typescript-eslint.io/getting-started/
+alias ts-eslint="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint" # install typescript+eslint https://typescript-eslint.io/getting-started/
+alias ts-node-prettier="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint prettier eslint-config-prettier"
+alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --esModuleInterop --resolveJsonModule --target ES2022 --module NodeNext --moduleResolution NodeNext" # For Node project. https://json.schemastore.org/tsconfig
 
 # Fun stuffs
-alias please="sudo !!"
+alias c="clear"
 alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
 alias fun-find-file='find / -name "*.conf*" | grep db' # to find a configuration file for db
+alias fun-find-file-time="find / -ctime 3" # to find files with change of 3 days. -cmin, -amin and -mmin for minutes
+alias fun-find-file-size="find / -size +10M" # to find files with size more than 10 Megabit's
+alias fun-find-file-type="sudo find . -type d -maxdepth 1" # to find files with size more than 10 Megabit's
+alias fun-less-numLine="less -N " # Show one screen of the file, with space the next screen. N number line. less -30
+alias fun-tail="tail -f " # Show the file and load the append text
 alias fun-previous-commad="!!" # run the most recent command
 alias fun-previous-history="!2" # history command show the number of the command
 alias fun-history-add-time='HISTTIMEFORMAT="%Y-%m-%d %T "' # add the date/time to the history
