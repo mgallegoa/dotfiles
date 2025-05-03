@@ -74,5 +74,20 @@ return {
 				cwd = "${workspaceFolder}",
 			},
 		}
+
+		-- Add a configuration for TypeScript
+		dap.configurations.typescript = {
+			{
+				type = "pwa-node", -- To use new vscode-dap-debug
+				request = "launch", -- For new process, attach for attach
+				name = "Typescript debbuger pwa-node",
+				runtimeExecutable = "ts-node",
+				args = { "${file}" }, -- Arguments passed to ts-node
+				cwd = "${workspaceFolder}", -- Ideal to resolve modules
+				sourceMaps = true, -- To support breackpoints to .ts files
+				protocol = "inspector", -- inspector for modern Node.js debugging
+				skipFiles = { "<node_internals>/**" }, -- skip internals, focus in the code
+			},
+		}
 	end,
 }
