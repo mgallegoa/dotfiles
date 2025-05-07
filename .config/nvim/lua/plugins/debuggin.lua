@@ -75,19 +75,29 @@ return {
 			},
 		}
 
-		-- Add a configuration for TypeScript
+		-- https://tsx.is/vscode#VPContent
+		-- Add a configuration for TypeScript - add to tsx --inspect-brk ./src/server.ts
 		dap.configurations.typescript = {
 			{
 				type = "pwa-node", -- To use new vscode-dap-debug
-				request = "launch", -- For new process, attach for attach
-				name = "Typescript debbuger pwa-node",
-				runtimeExecutable = "ts-node",
-				args = { "${file}" }, -- Arguments passed to ts-node
-				cwd = "${workspaceFolder}", -- Ideal to resolve modules
-				sourceMaps = true, -- To support breackpoints to .ts files
-				protocol = "inspector", -- inspector for modern Node.js debugging
-				skipFiles = { "<node_internals>/**" }, -- skip internals, focus in the code
+				request = "attach", -- For new process, attach for attach
+				name = "Typescript attach debbuger node",
+				port = "9229",
+				skipFiles = { "<node_internals>/**", "${workspaceFolder}/node_modules/**" }, -- skip internals, focus in the code
 			},
 		}
+
+		-- Add a configuration for TypeScript. It require tsx installed globally
+		-- dap.configurations.typescript = {
+		-- 	{
+		-- 		type = "pwa-node", -- To use new vscode-dap-debug
+		-- 		request = "launch", -- For new process, attach for attach
+		-- 		name = "Typescript debbuger pwa-node",
+		-- 		program = "${file}",
+		-- 		runtimeExecutable = "tsx",
+		-- 		console = "integratedTerminal",
+		-- 		skipFiles = { "<node_internals>/**", "${workspaceFolder}/node_modules/**" }, -- skip internals, focus in the code
+		-- 	},
+		-- }
 	end,
 }
