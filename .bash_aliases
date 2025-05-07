@@ -92,8 +92,9 @@ alias ij="sdk install java 21.0.6-tem"
 
 # Node
 alias ts-eslint="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint" # install typescript+eslint https://typescript-eslint.io/getting-started/
-alias ts-node-prettier="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint prettier eslint-config-prettier"
-alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --esModuleInterop --resolveJsonModule --target ES2022 --module NodeNext --moduleResolution NodeNext" # For Node project. https://json.schemastore.org/tsconfig
+alias ts-node-prettier="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint prettier eslint-config-prettier globals" # Install dev dependencies for a backend node project
+alias eslint-config="pnpm create @eslint/config" # Run the config https://eslint.org/docs/latest/use/getting-started (npm init @eslint/config)
+alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --esModuleInterop --resolveJsonModule" # For Node project. https://json.schemastore.org/tsconfig
 
 # Fun stuffs
 alias c="clear"
@@ -107,19 +108,26 @@ alias fun-tail="tail -f " # Show the file and load the append text
 alias fun-previous-commad="!!" # run the most recent command
 alias fun-previous-history="!2" # history command show the number of the command
 alias fun-history-add-time='HISTTIMEFORMAT="%Y-%m-%d %T "' # add the date/time to the history
-alias fun-show-back-ground='fg' # to sent a program to background press Ctrl+z 
 alias fun-matrix="cmatrix" # nice matrix effect in console
 alias fun-tail-logs="tail -f /var/log/syslog" # show system logs
 alias fun-delete-big-file="truncate -s 0 bigFile.txt" # Warning, delete the file content
 alias fun-output-in-column="mount | column -t" # easy to read the output
 alias fun-purge="dpkg -l | grep '^rc' | awk '{print $2}' | xargs sudo apt-get purge -y" # Purge the unused packages in linux
 alias fun-variables="printenv" # Show a list of environment variables.
-alias fun-clipboard-ui="ps aux | grep -E 'copyq|clipman|parcellite|gpaste|glipper|klipper|clipit'" # Check if exist clipboard ui.
+alias fun-clipboard-ui="ps aux | grep -E 'copyq|clipman|parcellite|gpaste|glipper|klipper|clipit'" # BSD Style. Check if exist clipboard ui.
 alias fun-ps="ps auxf" # all processes, display user-oriented format, show processes that aren't attached to ttys, use full-format listing"
 alias fun-ps-sr="ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -10" # list top 10 cpu-intensive processes
 alias fun-psmem="ps auxf | sort -nr -k 4" # get top process eating memory
 alias fun-psmem10="ps auxf | sort -nr -k 4 | head -10" # get top 10 process eating memory
-alias fun-pscpu="ps auxf | sort -nr -k 3" # get top process eating memory
-alias fun-pscpu10="ps auxf | sort -nr -k 3 | head -10" # get top 10 process eating memory
+alias fun-pscpu="ps auxf | sort -nr -k 3" # get top process eating CPU
+alias fun-pscpu10="ps auxf | sort -nr -k 3 | head -10" # get top 10 process eating CPU
+alias fun-show-foreground='fg' # to sent a program to background press Ctrl+z. Use bg to back ground process Ctrl+c to stop
+alias fun-load-average="w" # Load Average. Other ways: uptime and top. Last 3 numbers are: first is the percentage of use in the last minute, second is for last five minutes utilization and third is for last fifteen minutes utilization; if more than one CPU divide the value for the number of CPUs.
+alias fun-jobs="jobs -l" # Show PIDs of jobs
+alias fun-pstree="pstree" # Show the parents and child process
 alias fun-tar="tar -cvzf" # c: create new archive, v: verbose, z: filger gzip, f: use file
 alias fun-bash-options="shopt" # Show_options: display bash options settings
+alias fun-top="top" # h: List of keys. f: Enter top configuration screen. t: Display/hide summary rows 2 and 3. m: Display/hide memory rows 4 and 5. A: Sort by resources consumers. r: renice or change the priority of process. k: Kill process. o: Interactively new sort order. 1: to see the processors
+alias fun-shcedule="at" # Schedule at now + 2 days. To remove use atrm 103 (using atq to see number of schedule)
+alias fun-shcedule-time="cron" # Schedule table utility program use a cron configuration in /etc/crontab file. Each line contain 6 fields: MIN: Minutes (0 to 59), HOUR: (0 to 23), DOM: Day of Month (1-31), MON: Month (1-12), DOW: Day Of Week (0-6, 0:Sunday), CMD: Any command to executed
+alias fun-sleep="sleep" # Delay or suspended by time, sleep NUMBER[SUFFIX]. Default (s)econds, (m)inutes, (h)ours, (d)ays
