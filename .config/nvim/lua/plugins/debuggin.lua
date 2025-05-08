@@ -76,6 +76,7 @@ return {
 		}
 
 		-- https://tsx.is/vscode#VPContent
+		-- https://www.youtube.com/watch?v=CVCBHHFXWNE
 		-- Add a configuration for TypeScript - add to tsx --inspect-brk ./src/server.ts
 		dap.configurations.typescript = {
 			{
