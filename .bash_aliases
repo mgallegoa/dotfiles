@@ -65,6 +65,9 @@ alias d-additional="${HOME}/setup-tools/setup-tools-manuel-additional.sh"
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
 alias extip="curl icanhazip.com"
 alias ip="curl ipinfo.io"
+alias fun-ip="/sbin/ip --brief addr show" # Show the ip. /sbin/ip route show (route -n : to see the routes table)
+alias fun-check-net="nslookup google.com" # Show info about the IPv4 and IPv6. Other tool: dig google.com (/etc/networks)
+alias fun-traceroute="traceroute google.com" # Network tools: ethtool, netstat, nmap, tcpdump, iptraf, mtr, dig
 
 # Hotspotshield : Free VPN
 alias hs='hotspotshield status'
