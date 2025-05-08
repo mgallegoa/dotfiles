@@ -108,6 +108,9 @@ alias fun-find-file-type="sudo find . -type d -maxdepth 1" # to find files with 
 alias fun-less-numLine="less -N " # Show one screen of the file, with space the next screen. N number line. less -30
 alias fun-tail="tail -f " # Show the file and load the append text
 alias fun-sed="echo 'Demostrate Power Of Sed' | sed 's/\(\b[A-Z]\)/\(\1\)/3g'" # Stream EDitor: sed -f scriptFile <file> scripts commands over file
+alias fun-awk="awk -F: '{print \"name: \" \$1 \"          shell: \" \$7}' /etc/passwd | head -10" # Utility and powerful interpreted language. -F: option to separate by column. awk -f scriptfile file
+alias fun-file-manipulation="sort -k 3 /etc/passwd" # sort, uniq, paste, join, split. Sort starting from line 3, use -r to reverse
+alias fun-transform="echo 'This is for Testing tr' | tr [:space:] '\n'" # cat city | tr a-z A-Z From file city, transform the lower case to uppercase in the city file
 alias fun-previous-commad="!!" # run the most recent command
 alias fun-previous-history="!2" # history command show the number of the command
 alias fun-history-add-time='HISTTIMEFORMAT="%Y-%m-%d %T "' # add the date/time to the history
