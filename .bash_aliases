@@ -99,12 +99,15 @@ alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES20
 # Fun stuffs
 alias c="clear"
 alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
+alias fun-backup='rsync --progress -try-run' # Efficient than cp, chunk file, copy into network rsync someone@host. Recursive -r
+alias fun-file-types='file *' # Show the type of each file in the directory
 alias fun-find-file='find / -name "*.conf*" | grep db' # to find a configuration file for db
 alias fun-find-file-time="find / -ctime 3" # to find files with change of 3 days. -cmin, -amin and -mmin for minutes
 alias fun-find-file-size="find / -size +10M" # to find files with size more than 10 Megabit's
 alias fun-find-file-type="sudo find . -type d -maxdepth 1" # to find files with size more than 10 Megabit's
 alias fun-less-numLine="less -N " # Show one screen of the file, with space the next screen. N number line. less -30
 alias fun-tail="tail -f " # Show the file and load the append text
+alias fun-sed="echo 'Demostrate Power Of Sed' | sed 's/\(\b[A-Z]\)/\(\1\)/3g'" # Stream EDitor: sed -f scriptFile <file> scripts commands over file
 alias fun-previous-commad="!!" # run the most recent command
 alias fun-previous-history="!2" # history command show the number of the command
 alias fun-history-add-time='HISTTIMEFORMAT="%Y-%m-%d %T "' # add the date/time to the history
@@ -131,3 +134,9 @@ alias fun-top="top" # h: List of keys. f: Enter top configuration screen. t: Dis
 alias fun-shcedule="at" # Schedule at now + 2 days. To remove use atrm 103 (using atq to see number of schedule)
 alias fun-shcedule-time="cron" # Schedule table utility program use a cron configuration in /etc/crontab file. Each line contain 6 fields: MIN: Minutes (0 to 59), HOUR: (0 to 23), DOM: Day of Month (1-31), MON: Month (1-12), DOW: Day Of Week (0-6, 0:Sunday), CMD: Any command to executed
 alias fun-sleep="sleep" # Delay or suspended by time, sleep NUMBER[SUFFIX]. Default (s)econds, (m)inutes, (h)ours, (d)ays
+alias fun-user-add="sudo useradd -m -c 'User Name' user_name" # Create user with default files in /etc/skel folder. less /etc/default/useradd to defaults
+alias fun-user-change-pass="sudo passwd user_name" # Change the password or create a new one for the user_name user
+alias fun-groups="tail -15 /etc/group" # Delay the first 15 user group (tail -15 /etc/passwd) (sudo useradd user_name /etc/skel)
+alias fun-groups-modify="sudo /usr/sbin/usermod -a -G anewgroup manuel" # Add user manuel to the anewgroup (groups manuel)
+alias fun-groups-removeUsr="sudo /usr/sbin/usermod -G manuel manuel" # Remove user manuel from the group. (sudo -h)
+alias fun-history-commands="set | grep HIST" # Show the current config values for history
