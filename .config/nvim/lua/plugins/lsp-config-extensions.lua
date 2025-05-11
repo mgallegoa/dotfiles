@@ -1,3 +1,4 @@
 return {
-	"mfussenegger/nvim-jdtls",
+  "mfussenegger/nvim-jdtls",
+  version = "^0.2.0",
 }

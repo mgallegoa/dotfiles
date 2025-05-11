@@ -1,5 +1,6 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
+  version = "^3.8.5",
   main = "ibl",
   opts = {},
 
@@ -14,7 +15,7 @@ return {
       "RainbowCyan",
     }
 
-    local hooks = require "ibl.hooks"
+    local hooks = require("ibl.hooks")
     -- create the highlight groups in the highlight setup hook, so they are reset
     -- every time the colorscheme changes
     hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
@@ -27,6 +28,6 @@ return {
       vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#B4DEE4" })
     end)
 
-    require("ibl").setup { indent = { highlight = highlight } }
-  end
+    require("ibl").setup({ indent = { highlight = highlight } })
+  end,
 }

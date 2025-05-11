@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  tag = "v0.9.3",
   run = ":TSUpdate",
   config = function()
     local configs = require("nvim-treesitter.configs")
@@ -10,5 +11,5 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
     })
-  end
+  end,
 }
