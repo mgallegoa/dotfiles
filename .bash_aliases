@@ -101,6 +101,7 @@ alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES20
 
 # Fun stuffs
 alias c="clear"
+alias fun-time-zone="sudo ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime"
 alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
 alias fun-backup='rsync --progress -try-run' # Efficient than cp, chunk file, copy into network rsync someone@host. Recursive -r
 alias fun-file-types='file *' # Show the type of each file in the directory
