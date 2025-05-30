@@ -50,12 +50,6 @@ return {
         ":Neotree git_status reveal position=right toggle<CR>",
         { desc = "NeoTree git_status at the right of the screen." }
       )
-      vim.api.nvim_set_keymap(
-        "n",
-        "<CR>",
-        ':lua require("neo-tree").close()<CR>',
-        { noremap = true, silent = true, desc = "Close the file system afther open the file" }
-      )
     end,
   },
 }
