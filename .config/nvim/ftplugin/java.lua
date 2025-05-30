@@ -95,13 +95,12 @@ dap.configurations.java = {
     request = "launch",
     name = "Launch Plane Java Project",
     mainClass = "com.co.manuel.algorithms.list.SinglyLinkedList",
-    projectName = "java", -- If using multi-module projects, remove otherwise.
     console = "integratedTerminal", -- "integratedTerminal": Terminal inside Neovim (RECOMMENDED for Java). "internalConsole": Use the debug adapter's internal. "externalTerminal": External
     stopOnEntry = false, -- pause on the first line of your main method or entry point.
     javaExec = "/opt/manuel/sdkman/candidates/java/current/bin/java",
     -- modulePaths = {}, -- If using the JDK9+ module system, this needs to be extended `nvim-jdtls` automatically populate this
     cwd = vim.fn.getcwd(),
-    -- classPaths = { "target/classes" },-- You need to extend the classPath to list dependencies. `nvim-jdtls` automatically add the `classPaths`
+    classPaths = { "build" }, -- You need to extend the classPath to list dependencies. `nvim-jdtls` automatically add the `classPaths`
     -- args = {}, -- Object with the list of the arguments
   },
   -- Configuration when maven or gradle to run a new Java process to Debug
