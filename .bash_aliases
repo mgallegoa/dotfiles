@@ -92,6 +92,11 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # Java
 alias ij="sdk install java 21.0.6-tem"
+alias maven="mvn archetype:generate -DgroupId=com.co.manuel.algorithms.list -DartifactId=my-app \
+                       -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false" # Start a maven project
+alias maven-compile="mvn compile" # It compile everything and include dependencies
+alias maven-build="mvn package" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar
+alias maven-run="java -cp target/my-app-1.0-SNAPSHOT.jar com.co.manuel.algorithms.list.App" # Run the app
 
 # Node
 alias ts-eslint="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint" # install typescript+eslint https://typescript-eslint.io/getting-started/
