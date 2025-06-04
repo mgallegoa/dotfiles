@@ -1,6 +1,6 @@
 -- Ensure undodir exists
-local undodir = vim.fn.stdpath('data') .. '/undo'
-vim.fn.mkdir(undodir, 'p')
+local undodir = vim.fn.stdpath("data") .. "/undo"
+vim.fn.mkdir(undodir, "p")
 
 -- Configure undodir and enable undofile
 vim.opt.undodir = undodir
@@ -23,6 +23,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+require("config.globals")
 require("vim-customs")
-require('lazy').setup("plugins")
-
+require("lazy").setup("plugins")
