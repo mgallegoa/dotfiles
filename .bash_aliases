@@ -38,7 +38,7 @@ alias gt="git status"
 alias gl="git log --graph --decorate --oneline" # Show only the logs id and commit messages
 
 # Neovim
-alias nvim='/opt/manuel/nvim-linux64-v0.10.2/bin/nvim '
+alias nvim='/opt/manuel/nvim-linux64-v0.11.2/bin/nvim '
 alias nv='nvim '
 
 # Terminal kitty
