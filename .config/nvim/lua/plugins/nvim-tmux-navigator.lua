@@ -1,6 +1,6 @@
 return {
   "christoomey/vim-tmux-navigator",
-  commit = "33afa80",
+  commit = "96da8e1",
   vim.keymap.set("n", "C-h", ":TmuxNavigateLeft<CR>"),
   vim.keymap.set("n", "C-j", ":TmuxNavigateDown<CR>"),
   vim.keymap.set("n", "C-k", ":TmuxNavigateUp<CR>"),
