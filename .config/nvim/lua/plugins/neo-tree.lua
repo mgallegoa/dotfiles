@@ -5,7 +5,7 @@ return {
   },
   {
     "nvim-tree/nvim-web-devicons",
-    commit = "f142072",
+    commit = "1fb58cc",
   },
   {
     "MunifTanjim/nui.nvim",
