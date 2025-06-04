@@ -281,7 +281,7 @@ end
 
 return {
   "goolord/alpha-nvim",
-  commit = "de72250",
+  commit = "0f24de9",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     if options ~= nil then
