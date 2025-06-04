@@ -37,9 +37,6 @@ return {
 
       vim.keymap.set("n", "<Leader>dc", dap.continue, { desc = "Debug: continue or start, dc" })
       vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, { desc = "Debug: toggle breakpoint, dt" })
-      -- vim.keymap.set("n", "<Leader>dn", dap.step_over, { desc = "Debug: step over next, dn" })
-      -- vim.keymap.set("n", "<Leader>di", dap.step_into, { desc = "Debug: step into, di" })
-      -- vim.keymap.set("n", "<Leader>dp", dap.step_out, { desc = "Debug: step out previous, dp" })
       vim.keymap.set("n", "J", dap.step_over, { desc = "Debug: step over next, J" })
       vim.keymap.set("n", "H", dap.step_into, { desc = "Debug: step into, H" })
       vim.keymap.set("n", "K", dap.step_out, { desc = "Debug: step out previous, K" })
@@ -50,10 +47,10 @@ return {
       vim.keymap.set({ "n", "v" }, "<Leader>dw", widgets.preview, { desc = "Debug: DapUI previous widget, dw" })
       vim.keymap.set("n", "<Leader>df", function()
         widgets.centered_float(widgets.frames)
-      end)
+      end, { desc = "Debug: DapUI widget show frame, df" })
       vim.keymap.set("n", "<Leader>ds", function()
         widgets.centered_float(widgets.scopes)
-      end)
+      end, { desc = "Debug: DapUI widget show frame, ds" })
 
       vim.keymap.set("n", "<Leader>do", dapui.open, { desc = "Debug: DapUI open, do" })
       vim.keymap.set("n", "<Leader>dx", dapui.close, { desc = "Debug: DapUI close x, dx" })
