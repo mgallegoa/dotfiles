@@ -1,6 +1,6 @@
 return {
   "windwp/nvim-autopairs",
-  commit = "b464658",
+  commit = "2a406cd",
   event = "InsertEnter",
   config = true,
   -- use opts = {} for passing setup options
