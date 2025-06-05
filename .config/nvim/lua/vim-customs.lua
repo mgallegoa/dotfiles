@@ -27,10 +27,10 @@ vim.o.spelllang = "en_us"
 vim.o.mousemodel = "popup"
 
 vim.keymap.set(
-	{ "n", "v" },
-	"<leader>w",
-	":wa<CR>",
-	{ noremap = true, silent = true, desc = "Write in all files. : wa" }
+  { "n", "v" },
+  "<leader>w",
+  ":wa<CR>",
+  { noremap = true, silent = true, desc = "Write in all files. : wa" }
 )
 vim.keymap.set({ "n", "v" }, "<leader>q", ":q<CR>", { noremap = true, desc = "Quit the file. : q" })
 
@@ -38,16 +38,16 @@ vim.keymap.set({ "n", "v" }, "<leader>z", "$", { noremap = true, silent = true, 
 vim.keymap.set({ "n", "v" }, "<leader>a", "0", { noremap = true, silent = true, desc = "Go to the begin of the line" })
 
 vim.keymap.set(
-	"n",
-	"<leader>Y",
-	'"+yy',
-	{ noremap = true, silent = true, desc = "Copy the entire line to the clipboard" }
+  "n",
+  "<leader>Y",
+  '"+yy',
+  { noremap = true, silent = true, desc = "Copy the entire line to the clipboard" }
 )
 vim.keymap.set(
-	"v",
-	"<leader>y",
-	'"+y',
-	{ noremap = true, silent = true, desc = "Copy the selected text to the clipboard" }
+  "v",
+  "<leader>y",
+  '"+y',
+  { noremap = true, silent = true, desc = "Copy the selected text to the clipboard" }
 )
 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Goes to the next result on the seach and put the cursor in the middle" })
@@ -61,18 +61,18 @@ vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true, desc
 
 -- Easy for recise the nvim panes
 vim.keymap.set(
-	"n",
-	"<M-H>",
-	":vertical resize -2<CR>",
-	{ noremap = true, silent = true, desc = "Move pane to left (h)" }
+  "n",
+  "<M-H>",
+  ":vertical resize -2<CR>",
+  { noremap = true, silent = true, desc = "Move pane to left (h)" }
 )
 vim.keymap.set("n", "<M-J>", ":resize -2<CR>", { noremap = true, silent = true, desc = "Move pane to down (j)" })
 vim.keymap.set("n", "<M-K>", ":resize +2<CR>", { noremap = true, silent = true, desc = "Move pane to up (k)" })
 vim.keymap.set(
-	"n",
-	"<M-L>",
-	":vertical resize +2<CR>",
-	{ noremap = true, silent = true, desc = "Move pane to right (l)" }
+  "n",
+  "<M-L>",
+  ":vertical resize +2<CR>",
+  { noremap = true, silent = true, desc = "Move pane to right (l)" }
 )
 
 -- Split windows
