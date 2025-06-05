@@ -14,11 +14,11 @@ return {
 
     -- default formatters/pathresolver for different content types
     contenttypes = {
-      -- ["application/json"] = {
-      -- 	ft = "json",
-      -- 	formatter = { "jq", "." },
-      -- 	pathresolver = require("kulala.parser.jsonpath").parse,
-      -- },
+      ["application/json"] = {
+        ft = "json",
+        formatter = { "jq", "." },
+        -- pathresolver = require("kulala.parser.jsonpath").parse,
+      },
       ["application/xml"] = {
         ft = "xml",
         formatter = { "xmllint", "--format", "-" },
