@@ -29,7 +29,8 @@ return {
     version = "^0.0.2",
     config = function()
       local cmp = require("cmp")
-      require("luasnip.loaders.from_vscode").lazy_load()
+      local luasnip = require("luasnip.loaders.from_vscode")
+      luasnip.lazy_load()
       cmp.setup({
         snippet = {
           -- REQUIRED - you must specify a snippet engine
@@ -65,6 +66,7 @@ return {
           { name = "buffer" },
         }),
       })
+      vim.keymap.set("n", "<Leader>c", luasnip.lazy_load, { desc = "CMP: load completions, c" })
     end,
   },
 }
