@@ -92,11 +92,22 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # Java
 alias ij="sdk install java 21.0.6-tem"
-alias maven="mvn archetype:generate -DgroupId=com.co.manuel.algorithms.list -DartifactId=my-app \
+alias maven-init="mvn archetype:generate -DgroupId=com.co.manuel.algorithms.list -DartifactId=my-app \
                        -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false" # Start a maven project
-alias maven-compile="mvn compile" # It compile everything and include dependencies
+alias maven-compile="mvn clean compile test package" # It compile everything and include dependencies, same of mvn package
 alias maven-build="mvn package" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar
+alias maven-install="mvn install" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar and put in local maven repository.
 alias maven-run="java -cp target/my-app-1.0-SNAPSHOT.jar com.co.manuel.algorithms.list.App" # Run the app
+
+alias gradle-init="gradle init --type java-application --dsl java --test-framework junit-jupiter --package co.com.manuel.project.start --project-name project --no-split-project --java-version 21" # Start a gradle java project. Other example "gradle init" "gradle test" to run the test. https://docs.gradle.org/current/userguide/build_init_plugin.html#build_init_plugin
+alias gradle-compile="gradlew clean compile test package" # It compile everything and include dependencies, same of mvn package
+alias gradle-build="gradlew build" # To Build the gradle project. Include test command
+alias gradle-project="gradlew test -p my-app-frontend" # To run test for project my-app-frontend.
+alias gradle-depend="gradle dependencies" # To see the project dependencies.
+
+alias spring-help-init="spring help init | less" # To see help, how to create a new project.
+alias spring-help-artifacts="spring init --list | less" # To see help, list the options to create a project.
+alias spring-init="spring init -d=web,lombok,data-jpa,h2 --build=gradle --groupId=co.com.manuel --java-version=21 --name=project --type=gradle-project project" # Start a gradle java project. The last part is the name of the folder.
 
 # Node
 alias ts-eslint="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint" # install typescript+eslint https://typescript-eslint.io/getting-started/
