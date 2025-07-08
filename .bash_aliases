@@ -31,7 +31,8 @@ alias l-yacy="cd yacy && ./startYACY.sh" # Need to install Yacy Engine via termi
 alias g-config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME" # Set the git configuration
 alias g-name="git config --global user.name 'Manuel Arias'" # Git configuration for the user.name
 alias g-restart-agent='eval "$(ssh-agent -s)"' # Restart the ssh agent
-alias g-add-agent='ssh-add ' # To add the private key to the agent
+alias g-add-agent="ssh-add " # To add the private key to the agent
+alias g-using-ssh="git remote set-url origin git@github.com:mgallegoa/dotfiles.git" # In case of rep use https, change to use SSH
 alias g-show-remote='git remote -v ' # Show the URLs used for push and pull
 alias g-set-remote='git remote set-url origin ' # Set the remote URL for the repo
 alias gt="git status"
