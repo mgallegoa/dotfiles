@@ -32,11 +32,19 @@ alias g-config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME" # Set 
 alias g-name="git config --global user.name 'Manuel Arias'" # Git configuration for the user.name
 alias g-restart-agent='eval "$(ssh-agent -s)"' # Restart the ssh agent
 alias g-add-agent="ssh-add " # To add the private key to the agent
-alias g-using-ssh="git remote set-url origin git@github.com:mgallegoa/dotfiles.git" # In case of rep use https, change to use SSH
+alias g-set-url-ssh="git remote set-url origin git@github.com:mgallegoa/dotfiles.git" # In case of rep use https, change to use SSH
 alias g-show-remote="git remote -v " # Show the URLs used for push and pull
-alias g-set-remote="git remote set-url origin " # Set the remote URL for the repo
 alias gt="git status"
 alias gl="git log --graph --decorate --oneline" # Show only the logs id and commit messages
+# Steps to add a repository in github --->
+# cd ~/projects/my-folder
+# git init
+# git add .
+# git commit -m "Initial commit"
+# git remote add origin git@github.com:myuser/my-repo.git
+# git push -u origin main
+#
+# git pull origin main --allow-unrelated-histories # If is required to merge unrelated histories
 
 # Neovim
 alias nvim='/opt/manuel/nvim-linux64-v0.11.2/bin/nvim '
@@ -92,7 +100,8 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # Java
-alias ij="sdk install java 21.0.6-tem"
+alias ij="sdk install java 21.0.6-tem" # Install a specific java version using sdkman
+alias is="sdk install spring" # Install latest spring CLI version using sdkman
 alias maven-init="mvn archetype:generate -DgroupId=com.co.manuel.algorithms.list -DartifactId=my-app \
                        -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false" # Start a maven project
 alias maven-compile="mvn clean compile test package" # It compile everything and include dependencies, same of mvn package
@@ -110,7 +119,7 @@ alias spring-help-init="spring help init | less" # To see help, how to create a 
 alias spring-help-artifacts="spring init --list | less" # To see help, list the options to create a project.
 alias spring-init="spring init -d=devtools,web,lombok,data-jpa,h2 --build=gradle --groupId=com.co.manuel --java-version=21 --name=project --type=gradle-project project" # Start a gradle java project. The last part is the name of the folder.
 alias spring-run-gradle="SERVER_PORT=4000 ./gradlew bootRun" # Run the spring project created with gradle and using the wrapper. Equivalent to ./gradlew build && java -jar build/libs/project.jar (It need springboot, auto added when the project is create with Spring initializr or Spring CLI)
-alias spring-run-maven="SERVER_PORT=4000 java -jar target/hotel-spring-0.0.1-SNAPSHOT.jar" # Run the app, for spring maven create a fat jar, not need to use the -cp flag and the specific class
+alias spring-run-maven="SERVER_PORT=4000 java -jar target/hotel-spring-0.0.1-SNAPSHOT.jar" # Run the app, spring maven create a fat jar, not need to use the -cp flag and the specific class
 alias spring-run-dev="SERVER_PORT=4000 mvn spring-boot:run" # Hot Reload, run in dev, add to pom.xml <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> <scope>runtime</scope> </dependency>
 
 # Node
