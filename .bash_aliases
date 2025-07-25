@@ -101,7 +101,7 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # Java
 alias ij="sdk install java 21.0.6-tem" # Install a specific java version using sdkman
-alias is="sdk install spring" # Install latest spring CLI version using sdkman
+alias is="sdk install springboot" # Install latest spring CLI version using sdkman
 alias maven-init="mvn archetype:generate -DgroupId=com.co.manuel.algorithms.list -DartifactId=my-app \
                        -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false" # Start a maven project
 alias maven-compile="mvn clean compile test package" # It compile everything and include dependencies, same of mvn package
@@ -130,6 +130,7 @@ alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES20
 
 # Fun stuffs
 alias c="clear"
+alias fun-emoji=" \u{1F525}" # Flame emoji 🔥, insert emoji in nvim press Ctrl + v followed by U1F4C1 space, for a folder emoji
 alias fun-nvim-new-clean='nvim --clean -u init.lua'
 alias fun-time-zone="sudo ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime"
 alias fun-touchm="touch file{1..5}" # create 5 files with name file1, file2 .. file5
