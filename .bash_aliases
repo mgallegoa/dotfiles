@@ -117,7 +117,7 @@ alias gradle-depend="gradle dependencies" # To see the project dependencies.
 
 alias spring-help-init="spring help init | less" # To see help, how to create a new project.
 alias spring-help-artifacts="spring init --list | less" # To see help, list the options to create a project.
-alias spring-init="spring init -d=devtools,web,lombok,data-jpa,h2 --build=gradle --groupId=com.co.manuel --java-version=21 --name=project --type=gradle-project project" # Start a gradle java project. The last part is the name of the folder.
+alias spring-init="spring init -d=devtools,web,lombok,data-jpa,h2,validation --build=gradle --groupId=com.co.manuel --java-version=21 --name=project --type=gradle-project project" # Start a gradle java project. The last part is the name of the folder.
 alias spring-run-gradle="SERVER_PORT=4000 ./gradlew bootRun" # Run the spring project created with gradle and using the wrapper. Equivalent to ./gradlew build && java -jar build/libs/project.jar (It need springboot, auto added when the project is create with Spring initializr or Spring CLI)
 alias spring-run-maven="SERVER_PORT=4000 java -jar target/hotel-spring-0.0.1-SNAPSHOT.jar" # Run the app, spring maven create a fat jar, not need to use the -cp flag and the specific class
 alias spring-run-dev="SERVER_PORT=4000 mvn spring-boot:run" # Hot Reload, run in dev, add to pom.xml <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> <scope>runtime</scope> </dependency>
