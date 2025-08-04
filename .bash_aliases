@@ -108,6 +108,7 @@ alias maven-compile="mvn clean compile test package" # It compile everything and
 alias maven-build="mvn package" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar
 alias maven-install="mvn install" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar and put in local maven repository.
 alias maven-run="java -cp target/my-app-1.0-SNAPSHOT.jar com.co.manuel.algorithms.list.App" # Run the app
+alias maven-dependencies="mvn dependency:tree | grep assertj" # Check all dependencies, included transitives dependencies and search by assertj
 
 alias gradle-init="gradle init --type java-application --dsl java --test-framework junit-jupiter --package co.com.manuel.project.start --project-name project --no-split-project --java-version 21" # Start a gradle java project. Other example "gradle init" "gradle test" to run the test. https://docs.gradle.org/current/userguide/build_init_plugin.html#build_init_plugin
 alias gradle-compile="gradlew clean compile test package" # It compile everything and include dependencies, same of mvn package
