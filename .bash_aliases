@@ -129,7 +129,7 @@ alias spring-run-dev="SERVER_PORT=4000 mvn spring-boot:run" # Hot Reload, run in
 alias ts-eslint="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint" # install typescript+eslint https://typescript-eslint.io/getting-started/
 alias ts-node-prettier="pnpm add --save-dev eslint @eslint/js typescript typescript-eslint prettier eslint-config-prettier globals" # Install dev dependencies for a backend node project
 alias eslint-config="pnpm create @eslint/config" # Run the config https://eslint.org/docs/latest/use/getting-started (npm init @eslint/config)
-alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --esModuleInterop --resolveJsonModule --allowUnreachableCode false" # For Node typescript project. https://json.schemastore.org/tsconfig
+alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --esModuleInterop --resolveJsonModule --allowUnreachableCode false --verbatimModuleSintax false" # For Node typescript project. https://json.schemastore.org/tsconfig
 
 # Fun stuffs
 alias c="clear"
