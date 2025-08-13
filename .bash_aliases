@@ -104,8 +104,8 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 # Java
 alias ij="sdk install java 21.0.6-tem" # Install a specific java version using sdkman
 alias is="sdk install springboot" # Install latest spring CLI version using sdkman
-alias maven-init="mvn archetype:generate -DgroupId=com.co.manuel.algorithms.list -DartifactId=my-app \
-                       -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false" # Start a maven project
+alias maven-init="mvn archetype:generate -DgroupId=com.co.manuel.algorithms -DartifactId=my-app \
+                       -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false -DjunitVersion=5.12.2 -DjavaVersion=21" # Start a maven project
 alias maven-compile="mvn clean compile test package" # It compile everything and include dependencies, same of mvn package
 alias maven-build="mvn package" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar
 alias maven-install="mvn install" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar and put in local maven repository.
