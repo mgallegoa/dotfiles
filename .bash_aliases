@@ -104,6 +104,7 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 # Java
 alias ij="sdk install java 21.0.6-tem" # Install a specific java version using sdkman
 alias is="sdk install springboot" # Install latest spring CLI version using sdkman
+alias ig="sdk install gradle 8.14.3" # Install gradle version using for springboot CLI by default to generate the spring project
 alias maven-init="mvn archetype:generate -DgroupId=com.co.manuel.algorithms -DartifactId=my-app \
                        -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false -DjunitVersion=5.12.2 -DjavaVersion=21" # Start a maven project
 alias maven-compile="mvn clean compile test package" # It compile everything and include dependencies, same of mvn package
@@ -112,7 +113,7 @@ alias maven-install="mvn install" # It compile and generate a file target/my-app
 alias maven-run="java -cp target/my-app-1.0-SNAPSHOT.jar com.co.manuel.algorithms.list.App" # Run the app
 alias maven-dependencies="mvn dependency:tree | grep assertj" # Check all dependencies, included transitives dependencies and search by assertj
 
-alias gradle-init="gradle init --type java-application --dsl java --test-framework junit-jupiter --package co.com.manuel.project.start --project-name project --no-split-project --java-version 21" # Start a gradle java project. Other example "gradle init" "gradle test" to run the test. https://docs.gradle.org/current/userguide/build_init_plugin.html#build_init_plugin
+alias gradle-init="gradle init --type java-application --dsl groovy --test-framework junit-jupiter --package co.com.manuel.project.start --project-name project --no-split-project --java-version 21" # Start a gradle java project. Other example "gradle init" "gradle test" to run the test. https://docs.gradle.org/current/userguide/build_init_plugin.html#build_init_plugin
 alias gradle-compile="gradlew clean compile test package eclipse" # It compile everything and include dependencies, same of mvn package, the eclipse task is for jdtls eclipse LSP in neovim
 alias gradle-build="gradlew build -t" # To Build the gradle project. Include test command and re-buid to hot reload.
 alias gradle-project="gradlew test -p my-app-frontend" # To run test for project my-app-frontend.
