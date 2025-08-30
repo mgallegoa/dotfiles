@@ -136,6 +136,10 @@ alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES20
 alias aws-install="curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'
 unzip awscliv2.zip
 sudo ./aws/install --bin-dir /usr/local/bin --install-dir /opt/manuel/aws_cli_linux-x86_64/ --update" # Install the aws CLI v2 in the /opt/manuel/ directory
+alias aws-get-group="aws iam get-group --group-name group_admin_iam" # Get the group info included the users. To get group use: aws iam list-groups
+alias aws-get-policies-user="aws iam list-attached-user-policies --user-name MyUser" # Get the policies for the user.
+alias aws-user-policy-search='export POLICYARN=$(aws iam list-policies --query "Policies[?PolicyName==`AmazonS3ReadOnlyAccess`].{ARN:Arn}" --output text)' # Save the policy name AmazonS3ReadOnlyAccess to provide read-only access to all s3 buckets
+alias aws-user-plicy="aws iam attach-user-policy --user-name MyUser --policy-arn \$POLICYARN" # Assign the policy to the user
 
 # Fun stuffs
 alias c="clear"
