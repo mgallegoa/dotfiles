@@ -140,6 +140,8 @@ alias aws-get-group="aws iam get-group --group-name group_admin_iam" # Get the g
 alias aws-get-policies-user="aws iam list-attached-user-policies --user-name MyUser" # Get the policies for the user.
 alias aws-user-policy-search='export POLICYARN=$(aws iam list-policies --query "Policies[?PolicyName==`AmazonS3ReadOnlyAccess`].{ARN:Arn}" --output text)' # Save the policy name AmazonS3ReadOnlyAccess to provide read-only access to all s3 buckets
 alias aws-user-plicy="aws iam attach-user-policy --user-name MyUser --policy-arn \$POLICYARN" # Assign the policy to the user
+alias aws-create-ec2="aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e"
+alias aws-list-ec2-search='aws ec2 describe-instances --filters "Name=tag:Name,Values=MyInstance"' # List the ec2 instances and search by tag an value tag
 
 # Fun stuffs
 alias c="clear"
