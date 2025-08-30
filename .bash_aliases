@@ -142,6 +142,9 @@ alias aws-user-policy-search='export POLICYARN=$(aws iam list-policies --query "
 alias aws-user-plicy="aws iam attach-user-policy --user-name MyUser --policy-arn \$POLICYARN" # Assign the policy to the user
 alias aws-create-ec2="aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e"
 alias aws-list-ec2-search='aws ec2 describe-instances --filters "Name=tag:Name,Values=MyInstance"' # List the ec2 instances and search by tag an value tag
+alias aws-list-networks="aws vpc-lattice list-service-networks" # List the networks. Create a VPC -> Associate networks (2 private 2 public) -> create instance in public sub-net -> associate Internet Gateway to VPC -> Assign a route-table to the Internet Gateway (connect sub-net with IGW) -> assign a public network to a route-table
+alias aws-associate-igw-vpc="aws ec2 attach-internet-gateway --vpc-id 'vpc-077178ce5034379c8' --internet-gateway-id 'igw-0a1dca38fe5c62d1a' --region us-east-2" # Associate the internet gateway to a VPC
+alias aws-list-vpc="aws vpc-lattice list-service-network-vpc-associations --service-network-identifier sn-080" # List vpc require the network associate identifier
 
 # Fun stuffs
 alias c="clear"
