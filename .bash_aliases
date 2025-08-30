@@ -132,6 +132,11 @@ alias ts-node-prettier="pnpm add --save-dev eslint @eslint/js typescript typescr
 alias eslint-config="pnpm create @eslint/config" # Run the config https://eslint.org/docs/latest/use/getting-started (npm init @eslint/config)
 alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --esModuleInterop --resolveJsonModule --allowUnreachableCode false --verbatimModuleSintax false" # For Node typescript project. https://json.schemastore.org/tsconfig
 
+# Amazon Web Services aws
+alias aws-install="curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'
+unzip awscliv2.zip
+sudo ./aws/install --bin-dir /usr/local/bin --install-dir /opt/manuel/aws_cli_linux-x86_64/ --update" # Install the aws CLI v2 in the /opt/manuel/ directory
+
 # Fun stuffs
 alias c="clear"
 alias fun-emoji=" \u{1F525}" # Flame emoji 🔥, insert emoji in nvim press Ctrl + v followed by U1F4C1 space, for a folder emoji
