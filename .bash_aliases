@@ -136,13 +136,14 @@ alias ts-node="npx tsc --init --rootDir src --outDir dist --strict --target ES20
 alias aws-install="curl 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip' -o 'awscliv2.zip'
 unzip awscliv2.zip
 sudo ./aws/install --bin-dir /usr/local/bin --install-dir /opt/manuel/aws_cli_linux-x86_64/ --update" # Install the aws CLI v2 in the /opt/manuel/ directory
-alias aws-get-group="aws iam get-group --group-name group_admin_iam" # Get the group info included the users. To get group use: aws iam list-groups
-alias aws-get-policies-user="aws iam list-attached-user-policies --user-name MyUser" # Get the policies for the user.
-alias aws-user-policy-search='export POLICYARN=$(aws iam list-policies --query "Policies[?PolicyName==`AmazonS3ReadOnlyAccess`].{ARN:Arn}" --output text)' # Save the policy name AmazonS3ReadOnlyAccess to provide read-only access to all s3 buckets
-alias aws-user-plicy="aws iam attach-user-policy --user-name MyUser --policy-arn \$POLICYARN" # Assign the policy to the user
-alias aws-create-ec2="aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e"
-alias aws-list-ec2-search='aws ec2 describe-instances --filters "Name=tag:Name,Values=MyInstance"' # List the ec2 instances and search by tag an value tag
-alias aws-list-networks="aws vpc-lattice list-service-networks" # List the networks. Create a VPC -> Associate networks (2 private 2 public) -> create instance in public sub-net -> associate Internet Gateway to VPC -> Assign a route-table to the Internet Gateway (connect sub-net with IGW) -> assign a public network to a route-table
+alias aws-group-get="aws iam get-group --group-name group_admin_iam" # Get the group info included the users. To get group use: aws iam list-groups
+alias aws-policies-get-user="aws iam list-attached-user-policies --user-name MyUser" # Get the policies for the user.
+alias aws-policies-user-search='export POLICYARN=$(aws iam list-policies --query "Policies[?PolicyName==`AmazonS3ReadOnlyAccess`].{ARN:Arn}" --output text)' # Save the policy name AmazonS3ReadOnlyAccess to provide read-only access to all s3 buckets
+alias aws-policies-user="aws iam attach-user-policy --user-name MyUser --policy-arn \$POLICYARN" # Assign the policy to the user
+alias aws-ec2-create="aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids sg-903004f8 --subnet-id subnet-6e7f829e"
+alias aws-ec2-list-search='aws ec2 describe-instances --filters "Name=tag:Name,Values=MyInstance"' # List the ec2 instances and search by tag an value tag
+alias aws-ec2-start='aws ec2 start-instances --instance-ids i-123456abc' # Start the ec2 instances by id
+alias aws-list-networks="aws vpc-lattice list-service-networks" # List the networks. Create a VPC -> Associate networks (2 private 2 public) -> create instance in public sub-net -> associate Internet Gateway to VPC -> Assign a route-table to public network and the Internet Gateway (connect sub-net with IGW). Note: Check NetworkACL allow Inbound TCP 80 (HTTP) and Outbound Ephemeral ports (1024-65535) and Internal Firewall for the instance
 alias aws-associate-igw-vpc="aws ec2 attach-internet-gateway --vpc-id 'vpc-077178ce5034379c8' --internet-gateway-id 'igw-0a1dca38fe5c62d1a' --region us-east-2" # Associate the internet gateway to a VPC
 alias aws-list-vpc="aws vpc-lattice list-service-network-vpc-associations --service-network-identifier sn-080" # List vpc require the network associate identifier
 
