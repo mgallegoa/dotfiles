@@ -68,6 +68,8 @@ alias tfc="tmuxifier load-session tfc_configurations" # Open the configurations 
 # Edit docker deamon
 alias d-deamon="nvim /etc/docker/daemon.json" # {  "dns": ["8.8.8.8", "8.8.4.4"] }
 alias d-restart="sudo systemctl restart docker"
+alias d-apache-start="sudo systemctl start apache2" # To start the apache2 service (stop|restart|reload|force-reload|graceful-stop). To check the status: systemctl status apache2. Check if listen: ss -tuln | grep :80 or sudo lsof -i :80
+alias d-apache-active-ufw="sudo ufw allow 80/tcp" # Active Ubuntu FireWall on port 80
 alias d-additional="${HOME}/setup-tools/setup-tools-manuel-additional.sh"
 alias d-postgres="docker run -dp 5432:5432 --network hotel-network --name postgres -v /home/manuel/dataPostgres:/var/lib/postgresql/data -e POSTGRES_USERNAME=postgres -e POSTGRES_PASSWORD=manuelpass postgres" # Run a postgres container in the hotel-network using a volume to store data and username and password
 alias d-mysql="docker run -dp 3306:3306 --network hotel-network --name mysql -v /home/manuel/dataMysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=manuelpass mysql" # Run a mysql container in the hotel-network using a volume to store data and username default root and password
