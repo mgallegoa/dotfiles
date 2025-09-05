@@ -149,6 +149,9 @@ alias aws-list-networks="aws vpc-lattice list-service-networks" # List the netwo
 alias aws-associate-igw-vpc="aws ec2 attach-internet-gateway --vpc-id 'vpc-077178ce5034379c8' --internet-gateway-id 'igw-0a1dca38fe5c62d1a' --region us-east-2" # Associate the internet gateway to a VPC
 alias aws-list-vpc="aws vpc-lattice list-service-network-vpc-associations --service-network-identifier sn-080" # List vpc require the network associate identifier
 
+# Infraestructure as a code terraform
+alias tf="terraform" # Basic commands init, plan, apply, destroy. Flag -auto-approve
+
 # Fun stuffs
 alias c="clear"
 alias fun-emoji=" \u{1F525}" # Flame emoji 🔥, insert emoji in nvim press Ctrl + v followed by U1F4C1 space, for a folder emoji
