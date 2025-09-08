@@ -150,7 +150,9 @@ alias aws-associate-igw-vpc="aws ec2 attach-internet-gateway --vpc-id 'vpc-07717
 alias aws-list-vpc="aws vpc-lattice list-service-network-vpc-associations --service-network-identifier sn-080" # List vpc require the network associate identifier
 
 # Infraestructure as a code terraform
-alias tf="terraform" # Basic commands init, plan, apply, destroy. Flag -auto-approve
+alias tf="terraform" # Basic commands init, plan (compare infrastructure), apply, destroy. Flag -auto-approve
+alias tf-create-workspace="terraform workspace new prod" # To work with workspaces, create a new workspace call prod. Change with terraform select default
+alias tf-state-pull="terraform state pull" # To get local from remote changes for the terraform.tfstate
 
 # Fun stuffs
 alias c="clear"
