@@ -130,6 +130,17 @@ jdtls.start_or_attach({
       signatureHelp = { enabled = true }, -- Show parameter info while typing method arguments.
       saveActions = { organizeImports = true }, -- Auto-organize imports on save (true/false).
       -- contentProvider = { preferred = "fernflower" }, -- enables internal/decompiled class refs
+      imports = {
+        gradle = {
+          wrapper = {
+            checksums = {
+              ["7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172"] = {
+                allowed = true,
+              },
+            },
+          },
+        },
+      },
     },
   },
   on_attach = jdtls_on_attach,
@@ -144,7 +155,7 @@ dap.configurations.java = {
     type = "java",
     request = "launch",
     name = "Launch Plane Java Project",
-    mainClass = "com.co.manuel.algorithms.list.SinglyLinkedList",
+    mainClass = "com.co.manuel.algorithms.challenges.TwoSumEqualInputNumber",
     console = "integratedTerminal", -- "integratedTerminal": Terminal inside Neovim (RECOMMENDED for Java). "internalConsole": Use the debug adapter's internal. "externalTerminal": External
     stopOnEntry = false, -- pause on the first line of your main method or entry point.
     javaExec = "/opt/manuel/sdkman/candidates/java/current/bin/java",
