@@ -33,6 +33,7 @@ alias g-name="git config --global user.name 'Manuel Arias'" # Git configuration 
 alias g-restart-agent='eval "$(ssh-agent -s)"' # Restart the ssh agent
 alias g-add-agent="ssh-add " # To add the private key to the agent
 alias g-set-url-ssh="git remote set-url origin git@github.com:mgallegoa/dotfiles.git" # In case of rep use https, change to use SSH
+alias g-set-auto-upstream="git config --global push.autoSetupRemote true" # Alternative to git push --set-upstream origin main
 alias g-show-remote="git remote -v " # Show the URLs used for push and pull
 alias gt="git status"
 alias gl="git log --graph --decorate --oneline" # Show only the logs id and commit messages
