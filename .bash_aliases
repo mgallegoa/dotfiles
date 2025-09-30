@@ -113,6 +113,7 @@ alias maven-init="mvn archetype:generate -DgroupId=com.co.manuel.algorithms -Dar
 alias maven-compile="mvn clean compile test package" # It compile everything and include dependencies, same of mvn package
 alias maven-build="mvn package" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar
 alias maven-install="mvn install" # It compile and generate a file target/my-app-1.0-SNAPSHOT.jar and put in local maven repository.
+alias maven-test="mvn test -Dtest=GuestControllerTest#GuestController_deleteGuest_Test" # Run specific test method
 alias maven-run="java -cp target/my-app-1.0-SNAPSHOT.jar com.co.manuel.algorithms.list.App" # Run the app
 alias maven-dependencies="mvn dependency:tree | grep assertj" # Check all dependencies, included transitives dependencies and search by assertj
 
