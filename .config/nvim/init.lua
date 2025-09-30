@@ -6,6 +6,10 @@ vim.fn.mkdir(undodir, "p")
 vim.opt.undodir = undodir
 vim.opt.undofile = true
 
+-- Necessary before load the modicator plugin
+vim.g.number = true
+vim.g.cursorline = true
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then

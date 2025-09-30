@@ -15,7 +15,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.o.relativenumber = true
-vim.o.number = true
 vim.o.scrolloff = 10
 
 -- clipboard copy and paste from SO. Comment for personal copy and past see <leader>y keys
