@@ -156,6 +156,7 @@ alias aws-scp-file="scp -i 'ssh-key-yourkeyFile-please.pem' fileToCopy ec2-user@
 alias tf="terraform" # Basic commands init, plan (compare infrastructure), apply, destroy. Flag -auto-approve
 alias tf-create-workspace="terraform workspace new prod" # To work with workspaces, create a new workspace call prod. Change with terraform select default
 alias tf-state-pull="terraform state pull" # To get local from remote changes for the terraform.tfstate
+alias tf-export-region-aws="export AWS_REGION=us-east-1" # export AWS_ACCESS_KEY_ID=your_access_key export AWS_SECRET_ACCESS_KEY=your_secret_key
 
 # Fun stuffs
 alias c="clear"
