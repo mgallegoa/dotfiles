@@ -67,6 +67,10 @@ return {
         on_attach = _G.lsp_on_attach,
         capabilities = capabilities,
       })
+      vim.lsp.config("terraformls", {
+        on_attach = _G.lsp_on_attach,
+        capabilities = capabilities,
+      })
     end,
   },
 }
