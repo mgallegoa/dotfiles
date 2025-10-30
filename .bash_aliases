@@ -151,6 +151,7 @@ alias aws-list-networks="aws vpc-lattice list-service-networks" # List the netwo
 alias aws-associate-igw-vpc="aws ec2 attach-internet-gateway --vpc-id 'vpc-077178ce5034379c8' --internet-gateway-id 'igw-0a1dca38fe5c62d1a' --region us-east-2" # Associate the internet gateway to a VPC
 alias aws-list-vpc="aws vpc-lattice list-service-network-vpc-associations --service-network-identifier sn-080" # List vpc require the network associate identifier
 alias aws-scp-file="scp -i 'ssh-key-yourkeyFile-please.pem' fileToCopy ec2-user@ec2-3-138-137-69.us-east-2.compute.amazonaws.com/home/ec2-user/.ssh/" # Copy a file into a ec2 instance using scp
+alias aws-ec2-linux2023-mysql-mariadb="sudo dnf install -y mariadb105" # Command to install mariadb in an Amazon Linux 2023 ec2 instance.
 
 # Infraestructure as a code terraform
 alias tf="terraform" # Basic commands init, plan (compare infrastructure), apply, destroy. Flag -auto-approve
