@@ -15,6 +15,7 @@ return {
       htmlhint = { "htmlhint" },
       python = { "pylint" },
       lua = { "selene" }, -- luacheck Require luarock and selene use Rust
+      terraform = { "terraform_validate" },
     }
 
     -- Custom configuration to recognize the configuration file
