@@ -33,7 +33,7 @@ return {
     lazy = false,
     opts = {
       automatic_enable = {
-        exclude = { "jdtls" }, -- This is started using nvim-jdtls
+        exclude = { "jdtls", "kotlin" }, -- This is started using nvim-jdtls, kotlin in ftplugin folder
       },
     },
   },
