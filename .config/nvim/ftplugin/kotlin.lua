@@ -1,30 +1,41 @@
 -- ~/.config/nvim/ftplugin/kotlin.lua
-
-local lspconfig = require("lspconfig")
-local util = lspconfig.util
+if not (vim.fn.executable("kotlin-lsp") == 1) then
+  vim.notify("Install kotlin-lsp for kotlin via mason: ", vim.log.levels.WARN)
+  return
+end
 
 -- Prevent duplicate LSP startups
 if vim.b.kotlin_lsp_started then
   return
 end
+
+local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
+local util = lspconfig.util
+
 vim.b.kotlin_lsp_started = true
 
-lspconfig.kotlin_lsp.setup({
-  cmd = { "kotlin-lsp" },
-  filetypes = { "kotlin" },
-  root_dir = util.root_pattern(
-    "settings.gradle.kts",
-    "settings.gradle",
-    "build.gradle.kts",
-    "build.gradle",
-    ".git",
-    "pom.xml"
-  ),
-  single_file_support = true,
-  init_options = {
-    storagePath = vim.fn.stdpath("cache") .. "/kotlin-lsp",
-  },
-})
+if not configs.kotlin_lsp then
+  configs.kotlin_lsp = {
+    default_config = {
+      cmd = { "kotlin-lsp" },
+      filetypes = { "kotlin" },
+      root_dir = util.root_pattern(
+        "settings.gradle.kts",
+        "settings.gradle",
+        "build.gradle.kts",
+        "build.gradle",
+        ".git",
+        "pom.xml"
+      ),
+      single_file_support = true,
+      init_options = {
+        storagePath = vim.fn.stdpath("cache") .. "/kotlin-lsp",
+      },
+    },
+  }
+end
+lspconfig.kotlin_lsp.setup({})
 
 local dap = require("dap")
 
