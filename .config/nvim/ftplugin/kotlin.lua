@@ -35,6 +35,14 @@ if not configs.kotlin_lsp then
     },
   }
 end
+
+-- Inject JVM options correctly
+vim.env.JAVA_TOOL_OPTIONS = "--add-modules=java.desktop "
+  .. "--add-exports=java.desktop/com.apple.eawt=ALL-UNNAMED "
+  .. "--add-exports=java.desktop/com.apple.eawt.event=ALL-UNNAMED "
+  .. "--add-exports=java.desktop/sun.awt=ALL-UNNAMED "
+  .. "--add-exports=java.desktop/sun.lwawt=ALL-UNNAMED"
+
 lspconfig.kotlin_lsp.setup({})
 
 local dap = require("dap")
