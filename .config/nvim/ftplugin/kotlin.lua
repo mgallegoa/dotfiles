@@ -37,7 +37,7 @@ if not configs.kotlin_lsp then
 end
 
 -- Inject JVM options correctly
-vim.env.JAVA_TOOL_OPTIONS = "--add-modules=java.desktop "
+vim.env.JAVA_TOOL_OPTIONS = "--add-modules=java.desktop -Xms512m -Xmx2g "
   .. "--add-exports=java.desktop/com.apple.eawt=ALL-UNNAMED "
   .. "--add-exports=java.desktop/com.apple.eawt.event=ALL-UNNAMED "
   .. "--add-exports=java.desktop/sun.awt=ALL-UNNAMED "
