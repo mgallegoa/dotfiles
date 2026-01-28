@@ -210,3 +210,6 @@ alias fun-groups="tail -15 /etc/group" # Delay the first 15 user group (tail -15
 alias fun-groups-modify="sudo /usr/sbin/usermod -a -G anewgroup manuel" # Add user manuel to the anewgroup (groups manuel)
 alias fun-groups-removeUsr="sudo /usr/sbin/usermod -G manuel manuel" # Remove user manuel from the group. (sudo -h)
 alias fun-history-commands="set | grep HIST" # Show the current config values for history
+alias fun-ps-kotlin-jvm-java="ps aux | grep kotlin-lsp | grep -v grep" # Show the process for kotlin-lsp
+alias fun-ps-kotlin-jvm-java-flags="jcmd 123456 VM.flags" # -XX:InitialHeapSize=536870912 and -XX:MaxHeapSize=2147483648 is equal to Xms = 512m and Xmx = 2g. For small Xmx=1g, for medium Xmx=2g and large Xmx=3g
+
