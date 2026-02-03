@@ -161,6 +161,12 @@ alias tf-create-workspace="terraform workspace new prod" # To work with workspac
 alias tf-state-pull="terraform state pull" # To get local from remote changes for the terraform.tfstate
 alias tf-export-region-aws="export AWS_REGION=us-east-1" # export AWS_ACCESS_KEY_ID=your_access_key export AWS_SECRET_ACCESS_KEY=your_secret_key
 
+# Kafka
+alias kafka-run-container="docker run -d -p 9092:9092 --name broker apache/kafka:latest" # Create a container with kafka running
+alias kafka-create-topic="/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test-topic" # Create a topic named test-tipic
+alias kafka-console-producer="/opt/kafka/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test-topic" # Open the console to send messages to test-tipic
+alias kafka-console-consumer="/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test-topic --from-beginning" # Read the messages from test-tipic. The flag --from-beginning to read all messages
+
 # Fun stuffs
 alias c="clear"
 alias fun-emoji=" \u{1F525}" # Flame emoji 🔥, insert emoji in nvim press Ctrl + v followed by U1F4C1 space, for a folder emoji
