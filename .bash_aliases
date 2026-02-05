@@ -74,6 +74,8 @@ alias d-apache-active-ufw="sudo ufw allow 80/tcp" # Active Ubuntu FireWall on po
 alias d-additional="${HOME}/setup-tools/setup-tools-manuel-additional.sh"
 alias d-postgres="docker run -dp 5432:5432 --network hotel-network --name postgres -v /home/manuel/dataPostgres:/var/lib/postgresql/data -e POSTGRES_USERNAME=postgres -e POSTGRES_PASSWORD=manuelpass postgres" # Run a postgres container in the hotel-network using a volume to store data and username and password
 alias d-mysql="docker run -dp 3306:3306 --network hotel-network --name mysql -v /home/manuel/dataMysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=manuelpass mysql" # Run a mysql container in the hotel-network using a volume to store data and username default root and password
+alias d-compose-install="curl -SL https://github.com/docker/compose/releases/download/v2.25.0/docker-compose-linux-x86_64 \
+  -o ~/.docker/cli-plugins/docker-compose" # Install docker compose next make executable with chmod +x ~/.docker/cli-plugins/docker-compose
 
 # Internet: Check internet status and IP
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
