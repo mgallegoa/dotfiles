@@ -37,6 +37,9 @@ alias g-set-auto-upstream="git config --global push.autoSetupRemote true" # Alte
 alias g-show-remote="git remote -v " # Show the URLs used for push and pull
 alias gt="git status"
 alias gl="git log --graph --decorate --oneline" # Show only the logs id and commit messages
+alias gd="git diff --word-diff" # Show only the change and not the entire line. -w to ignore spaces. --no-index file1 file2 to compare two files
+alias g-worktree="git worktree add ../dev-container-hotfix -b hotfix" # Create a new work tree from the current repository. git rebase main : to copy the changes
+alias g-worktree-prune="git worktree prune" # Prune the deleted work tree. Use rm -rf ../dev-container-hotfix. Use git chkckout main to move to main
 # Steps to add a repository in github --->
 # cd ~/projects/my-folder
 # git init
