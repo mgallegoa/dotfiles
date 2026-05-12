@@ -23,6 +23,7 @@ return {
         lua = { "stylua" },
         python = { "isort", "black" },
         terraform = { "terraform_fmt" },
+        xml = { "xmlformatter" },
       },
       format_on_save = {
         lsp_fallback = true,
