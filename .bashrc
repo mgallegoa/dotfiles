@@ -300,8 +300,8 @@ export NVM_DIR="/opt/manuel/nvm-v0.39.7"
 
 # Custon theme catppuccin from oh-my-posh
 export PATH="$HOME/.local/bin:$PATH"
-#export POSH_THEME="blueish"
-export POSH_THEME="night-owl"
+export POSH_THEME="blue-owl"
+# export POSH_THEME="atomic"
 eval "$(oh-my-posh --init --shell bash --config $HOME/.cache/oh-my-posh/themes/$POSH_THEME.omp.json)"
 
 # Data Bases DBeaver UI Client
